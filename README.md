@@ -7,5 +7,6 @@ UBarter utilizes a “listing” based system, listings are a collection of item
 
 ## Founder
 + SeihakRithy Muth (Rithy58)
++ Seydeh Arta Razavi (artarazavi)
 + David Zagreda (dzagreda)
 + Jeremy Lee (jeremylee123)
