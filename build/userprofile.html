@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head;
          any other head content must come *after* these tags -->
-    <title>User Profile</title>
+    <title>uBarter User Profile</title>
 
     <!-- Bootstrap's CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -15,46 +15,81 @@
   </head>
   <body>
     <!-- All of your HTML will go between here.... -->
+    <nav class="navbar navbar-fixed-top navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                  data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- Use a "home" glyphicon as a logo. -->
+          <h6></h6>
+          <img src="img/ubarter-logo.jpg" alt="uBarter" width="40" height="40">
+          <h6></h6>
+        </div>
+
+        <!-- On mobile, this div is hidden by default. The user hits the button
+             in the `navbar-header` to see the content of the div.
+             On desktop, this div is visible all of the time. -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <form class="navbar-form navbar-left" role="search">
+            <!-- Left-aligned items. -->
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <!-- Right-aligned items. -->
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
     <div class="container">
     <div class="row profile">
 		<div class="col-md-3">
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic text-center">
-          PIC
+          <img src="img/avatar.png" alt="avatar" class="img-circle center-block" width="140" height="140">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name ">
-						Jeremy Lee
+						<h3 class="text-center">JEREMY LEE</h3>
 					</div>
 					<div class="profile-usertitle-job">
-						Founder of UBarter
+						<h4>Founder of uBarter</h4>
 					</div>
 				</div>
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS -->
 				<div class="profile-userbuttons">
-					<button type="button" class="btn btn-sm">Follow</button>
-					<button type="button" class="btn btn-sm">Message</button>
+  				<button type="button" class="btn btn-sm">
+            Edit Profile
+          </button>
 				</div>
+        <div>
+          <h6> </h6>
+        </div>
+        <div class="profile-userbuttons">
+          <button type="button" class="btn btn-sm">
+              <i class="glyphicon glyphicon-wrench"></i>
+              Account Settings
+            </button>
+        </div>
 				<!-- END SIDEBAR BUTTONS -->
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu">
 					<ul class="nav">
-						<li class="active">
+            <li class="active">
+              <a href="#">
+                <i class="glyphicon glyphicon-th-list"></i>
+                My Listings </a>
+            </li>
+            <li>
 							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
-							Overview </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-user"></i>
-							Account Settings </a>
-						</li>
-						<li>
-							<a href="#" target="_blank">
 							<i class="glyphicon glyphicon-ok"></i>
 							Matches </a>
 						</li>
@@ -69,12 +104,53 @@
 			</div>
 		</div>
 		<div class="col-md-9">
-            <div class="profile-content">
-			   Some user related content goes here...
-            </div>
+      <div class="panel-body"><span class="panel-block">TEXTBOOKS I OWN</span>
+        <span class="profile-userbuttons">
+        <button type="button" class="btn btn-sm pull-right">
+            <span class="glyphicon glyphicon-pencil"></span>
+            Edit Listing
+          </button>
+        </span>
+        <div class="media">
+        <div class="media-left">
+          <img class="media-object" src="img/examplebook.jpg" alt="Essentials of Marketing Research" width="130" height="180">
+        </div>
+          <div class="media-body">
+            <h4 class="media-heading">Essentials of Marketing Research</h4>
+            <ul class="list-group">
+              <li class="list-group-item">Author: Joseph F. Hair, Jr.</li>
+              <li class="list-group-item">Edition: 3rd Edition</li>
+              <li class="list-group-item">ISBN: 978-0-07-802881</li>
+              <li class="list-group-item">Publisher: The McGraw-Hill Companies, Inc.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="panel-body"><span class="panel-block">TEXTBOOKS I NEED</span>
+        <span class="profile-userbuttons">
+        <button type="button" class="btn btn-sm pull-right">
+            <span class="glyphicon glyphicon-pencil"></span>
+            Edit Listing
+          </button>
+        </span>
+        <div class="media">
+        <div class="media-left">
+          <img class="media-object" src="img/examplebook2.jpg" alt="The Official Guide to GRE">
+        </div>
+          <div class="media-body">
+            <h4 class="media-heading">The Official Guide to the GRE revised General Test</h4>
+            <ul class="list-group">
+              <li class="list-group-item">Author: N/A</li>
+              <li class="list-group-item">Edition: 2nd Edition</li>
+              <li class="list-group-item">ISBN: 978-0-07-179123-6</li>
+              <li class="list-group-item">Publisher: Educational Testing Service</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 		</div>
-	</div>
-</div>
+
 
 
     <!-- ...and here. -->

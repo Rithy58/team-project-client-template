@@ -1,10 +1,31 @@
 body {
   background: #F1F3FA;
+  padding-top: 60px;
 }
+
+h3 {
+  font-weight: bold;
+}
+
+.navbar {
+  background-color: #fff;
+}
+
+.panel-body {
+  background-color: #fff !important;
+}
+
+.panel-block {
+  color: #00cc33;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .btn-sm:hover,
 .btn-sm:focus,
 .btn-sm:active,
 .btn-sm:active {
+  text-align: center;
   color: #fff !important;
   background-color: #00cc33 !important;
   border-color: #00cc33 !important;
@@ -12,6 +33,7 @@ body {
 /* Profile container */
 .profile {
   margin: 20px 0;
+  min-height: 920px;
 }
 
 /* Profile sidebar */
@@ -44,7 +66,6 @@ body {
 }
 
 .profile-usertitle-job {
-  text-transform: uppercase;
   color: #333;
   font-size: 12px;
   font-weight: 600;
@@ -52,17 +73,17 @@ body {
 }
 
 .profile-userbuttons {
-  color: #00cc33;
+  color: #fff;
   text-align: center;
-  margin-top: 10px;
 }
 
 .profile-userbuttons .btn {
+  background-color: #fff;
   color: #00cc33;
+  border-color: #00cc33;
   text-transform: uppercase;
   font-size: 11px;
   font-weight: 600;
-  padding: 6px 15px;
   margin-right: 5px;
 }
 
@@ -105,13 +126,12 @@ body {
 .profile-usermenu ul li.active a {
   color: #00cc33;
   background-color: #f6f9fb;
-  border-left: 2px solid #5b9bd1;
+  border-left: 2px solid #00cc33;
   margin-left: -2px;
 }
 
 /* Profile Content */
 .profile-content {
-  padding: 20px;
   background: #fff;
   min-height: 460px;
 }
