@@ -1,5 +1,44 @@
-.chatbox {
-  width: 500px;
-  min-width: 400px;
-  height: 600px;
+.message-panel {
+  margin-top: 50px !important;
+}
+
+.chat-users_list {
+  margin-top: 25px !important;
+  margin-bottom: 10px !important;
+  background: #e8e6e7;
+}
+.user  {
+  margin-bottom: 30px !important;
+}
+
+.chat-user-msg {
+  margin-top: 10px !important;
+  margin-left: 50px !important;
+}
+
+.timestamp {
+  float: right;
+}
+
+.fb-send {
+  margin-top: 130px !important;
+}
+vr {
+    display: block;
+    width:1px;
+    background-color:#000;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:220px;
+    height: 530px
+}
+
+hr {
+  border:none;
+  border-top:0px dotted black;
+  color: black;
+  background-color: black;
+  height:1px;
+  width:100%;
 }
