@@ -11,3 +11,4 @@ UBarter utilizes a “listing” based system, listings are a collection of item
 + David Zagreda (dzagreda)
 + Jeremy Lee (jeremylee123)
 + Colin Stern (colinstern)
++ Brendan Shaughnessy (brendan-shaugh)
