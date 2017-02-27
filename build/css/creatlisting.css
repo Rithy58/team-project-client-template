@@ -1,0 +1,76 @@
+body {
+  background: #F1F3FA;
+}
+
+.panel-body {
+  background-color: #fff !important;
+  border-style: solid;
+  border-color: green;
+  border-width: 2px;
+  border-radius: 25px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+}
+
+.header {
+  background-color: #5CE161;
+}
+
+.enterc {
+  padding-top: 100px;
+}
+
+.form-title {
+  padding-bottom: 20px;
+}
+
+.left-side {
+  outline: 2px solid black;
+}
+
+.right-side {
+  outline: 2px solid black;
+  outline
+}
+
+.btn {
+  background-color: #fff;
+  color: #00cc33;
+  border-color: #00cc33;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.btn-sm:hover,
+.btn-sm:focus,
+.btn-sm:active,
+.btn-sm:active {
+  text-align: center;
+  color: #fff !important;
+  background-color: #00cc33 !important;
+  border-color: #00cc33 !important;
+}

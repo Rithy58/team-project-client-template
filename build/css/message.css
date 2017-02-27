@@ -1,0 +1,46 @@
+body {
+  margin-top: 80px;
+}
+
+
+#over-panel {
+  border: 2px solid green !important;
+}
+
+#msg-panel {
+  border: 2px solid green !important;
+}
+
+#sidebarPanel {
+  border: 2px solid green !important;
+}
+.chat-img {
+  margin-right: 10px;
+}
+
+.badge {
+  margin-right: 5px;
+}
+
+.header {
+  font-size: 20px;
+  margin-bottom: -20px;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #c0c0c0;
+}
+
+.divider {
+   margin-top: 0px;
+}
+
+#spacing {
+  margin-bottom: 11px;
+}
+
+.currently_typing {
+  font-size: 12px;
+  color: #c0c0c0;
+}
