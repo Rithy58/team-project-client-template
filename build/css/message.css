@@ -1,7 +1,19 @@
-.overall-panel {
-  margin-top: 25px;
+body {
+  margin-top: 80px;
 }
 
+
+#over-panel {
+  border: 2px solid green !important;
+}
+
+#msg-panel {
+  border: 2px solid green !important;
+}
+
+#sidebarPanel {
+  border: 2px solid green !important;
+}
 .chat-img {
   margin-right: 10px;
 }
