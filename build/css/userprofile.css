@@ -8,13 +8,13 @@ h3 {
 }
 
 p {
-  color: #00cc33;
+  color: green;
   font-weight: bold;
   font-size: 25px;
 }
 
 .logo {
-    color: #00cc33;
+    color: green;
     font-variant: small-caps;
     font-size: 25px;
 }
@@ -25,10 +25,17 @@ p {
 
 .panel-body {
   background-color: #fff !important;
+  padding: auto;
+  margin: auto;
+  width: auto;
+  border-style: solid;
+  border-width: 2px;
+  border-color: green;
+  border-radius: 25px;
 }
 
 .panel-block {
-  color: #00cc33;
+  color: green;
   font-size: 20px;
   font-weight: bold;
 }
@@ -39,8 +46,8 @@ p {
 .btn-sm:active {
   text-align: center;
   color: #fff !important;
-  background-color: #00cc33 !important;
-  border-color: #00cc33 !important;
+  background-color: green !important;
+  border-color: green !important;
 }
 /* Profile container */
 .profile {
@@ -53,6 +60,10 @@ p {
 .profile-sidebar {
   padding: 20px 0 10px 0;
   background: #fff;
+  border-style: solid;
+  border-width: 2px;
+  border-color: green;
+  border-radius: 25px;
 }
 
 .profile-userpic img {
@@ -71,7 +82,7 @@ p {
 }
 
 .profile-usertitle-name {
-  color: #00cc33;
+  color: green;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 7px;
@@ -91,8 +102,8 @@ p {
 
 .profile-userbuttons .btn {
   background-color: #fff;
-  color: #00cc33;
-  border-color: #00cc33;
+  color: green;
+  border-color: green;
   text-transform: uppercase;
   font-size: 11px;
   font-weight: 600;
@@ -116,7 +127,7 @@ p {
 }
 
 .profile-usermenu ul li a {
-  color: #00cc33;
+  color: green;
   font-size: 14px;
   font-weight: 400;
 }
@@ -128,7 +139,7 @@ p {
 
 .profile-usermenu ul li a:hover {
   background-color: #fafcfd;
-  color: #00cc33;
+  color: green;
 }
 
 .profile-usermenu ul li.active {
@@ -136,9 +147,9 @@ p {
 }
 
 .profile-usermenu ul li.active a {
-  color: #00cc33;
+  color: green;
   background-color: #f6f9fb;
-  border-left: 2px solid #00cc33;
+  border-left: 2px solid green;
   margin-left: -2px;
 }
 
