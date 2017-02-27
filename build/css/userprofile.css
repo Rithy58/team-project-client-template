@@ -58,10 +58,9 @@ p {
 /* Profile sidebar */
 
 .profile-sidebar {
-  padding: 20px 0 10px 0;
+  padding: 20px 0 20px 0;
   background: #fff;
   border-style: solid;
-  border-width: 2px;
   border-color: green;
   border-radius: 25px;
 }
@@ -69,11 +68,10 @@ p {
 .profile-userpic img {
   float: none;
   margin: 0 auto;
-  width: 50%;
-  height: 50%;
-  -webkit-border-radius: 50% !important;
-  -moz-border-radius: 50% !important;
-  border-radius: 50% !important;
+  padding: 20px;
+  width: 75%;
+  height: 75%;
+  border: 2px solid green;
 }
 
 .profile-usertitle {
@@ -82,7 +80,7 @@ p {
 }
 
 .profile-usertitle-name {
-  color: green;
+  color: black;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 7px;
@@ -147,10 +145,8 @@ p {
 }
 
 .profile-usermenu ul li.active a {
-  color: green;
-  background-color: #f6f9fb;
-  border-left: 2px solid green;
-  margin-left: -2px;
+  color: white;
+  background-color: green;
 }
 
 /* Profile Content */
