@@ -4,6 +4,10 @@ body {
 
 .panel-body {
   background-color: #fff !important;
+  border-style: solid;
+  border-color: green;
+  border-width: 2px;
+  border-radius: 25px;
 }
 
 .btn-file {
@@ -35,7 +39,7 @@ body {
 }
 
 .enterc {
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 .form-title {
@@ -52,6 +56,21 @@ body {
 }
 
 .btn {
-  background-color: #5CE161;
-  color: white;
+  background-color: #fff;
+  color: #00cc33;
+  border-color: #00cc33;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.btn-sm:hover,
+.btn-sm:focus,
+.btn-sm:active,
+.btn-sm:active {
+  text-align: center;
+  color: #fff !important;
+  background-color: #00cc33 !important;
+  border-color: #00cc33 !important;
 }
