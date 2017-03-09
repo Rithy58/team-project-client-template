@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class userprofile extends React.Component {
+export default class userprofile extends React.Component {
   render() {
     return (
       <p>User Profile</p>
