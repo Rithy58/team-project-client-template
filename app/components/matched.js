@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class matched extends React.Component {
+export default class matched extends React.Component {
   render() {
     return (
       <p>Matched</p>
