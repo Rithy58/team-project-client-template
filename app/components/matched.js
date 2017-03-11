@@ -1,12 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 export default class matched extends React.Component {
   render() {
     return (
-      <p>Matched</p>
+      <h1>Matched</h1>
     )
   }
 }
-
-ReactDOM.render(<matched />, document.getElementById('matched'));
