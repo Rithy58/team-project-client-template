@@ -4,11 +4,14 @@ import ReactDOM from 'react-dom';
 //import home from './components/home.js';
 //import search from './components/search.js';
 //import userprofile from './components/userprofile.js';
-import matched from './components/matched.js';
+import Matched from './components/matched.js';
 //import message from './components/message.js';
 
 if(document.getElementById('matched') !== null) {
-  ReactDOM.render(<matched />, document.getElementById('matched'));
+  ReactDOM.render(
+    <Matched />,
+    document.getElementById('matched')
+  );
 }
 
 /*

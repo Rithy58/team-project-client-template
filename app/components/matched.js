@@ -1,9 +1,15 @@
 import React from 'react';
 
-export default class matched extends React.Component {
+export default class Matched extends React.Component {
   render() {
     return (
-      <h1>Matched</h1>
+      <div className="container">
+        <div className="panel panel-success match-panel">
+          <div className="panel-heading">
+            Match Found!
+          </div>
+        </div>
+      </div>
     )
   }
 }
