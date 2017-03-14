@@ -21,6 +21,7 @@ export default class Matched extends React.Component {
                 avatar='img/user2.jpg'
               />
             </div>
+            <br />
             <div className="row">
               <div className="col-md-12 text-center">
                 <div className="btn-group" role="group" aria-label="buttons">
