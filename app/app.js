@@ -2,7 +2,7 @@ import React from 'react'; // eslint-disable-line no-unused-vars
 import ReactDOM from 'react-dom';
 
 //import home from './components/home.js';
-//import search from './components/search.js';
+import Search from './components/search.js';
 //import userprofile from './components/userprofile.js';
 import Matched from './components/matched.js';
 //import message from './components/message.js';
@@ -12,6 +12,10 @@ if(document.getElementById('matched') !== null) {
     <Matched />,
     document.getElementById('matched')
   );
+} else if(document.getElementById('search') !== null) {
+  ReactDOM.render(
+    <Search />,
+    document.getElementById('search'));
 }
 
 /*
