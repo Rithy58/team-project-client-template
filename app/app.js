@@ -2,8 +2,7 @@ import React from 'react'; // eslint-disable-line no-unused-vars
 import ReactDOM from 'react-dom';
 
 //import home from './components/home.js';
-//import Userprofile from './components/userprofile.js';
-
+import Userprofile from './components/userprofile.js';
 import Search from './components/search.js';
 import Matched from './components/matched.js';
 //import message from './components/message.js';
