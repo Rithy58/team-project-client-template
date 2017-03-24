@@ -1,12 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-export default class userprofile extends React.Component {
+import Userprofile_Sidebar from './userprofile_sidebar.js'
+import Userprofile_Panel from './userprofile_panel.js';
+
+export default class Userprofile extends React.Component {
   render() {
     return (
-      <p>User Profile</p>
+      <div className="container">
+      <div className="row-profile">
+        <Userprofile_Sidebar />
+        <Userprofile_Panel />
+
+      </div>
+      </div>
+
+
     )
   }
 }
-
-ReactDOM.render(<userprofile />, document.getElementById('userprofile'));

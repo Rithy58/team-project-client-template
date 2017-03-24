@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 //import home from './components/home.js';
 //import search from './components/search.js';
-//import userprofile from './components/userprofile.js';
+//import Userprofile from './components/userprofile.js';
 import Matched from './components/matched.js';
 //import message from './components/message.js';
 
