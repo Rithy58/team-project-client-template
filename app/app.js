@@ -20,18 +20,8 @@ if(document.getElementById('matched') !== null) {
   ReactDOM.render(
     <Userprofile />,
     document.getElementById('userprofile'));
-}else if(document.getElementById('home') !== null) {
+} else if(document.getElementById('home') !== null) {
   ReactDOM.render(
     <Home />,
    document.getElementById('home'));
 }
-/*
-} else if(document.getElementById('search') !== null) {
-  ReactDOM.render(<search />, document.getElementById('search'));
-} else if(document.getElementById('userprofile') !== null) {
-  ReactDOM.render(<userprofile />, document.getElementById('userprofile'));
-} else if(document.getElementById('matched') !== null) {
-  ReactDOM.render(<matched />, document.getElementById('matched'));
-} else if(document.getElementById('message') !== null) {
-  ReactDOM.render(<message />, document.getElementById('message'));
-}*/
