@@ -1,7 +1,7 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import ReactDOM from 'react-dom';
 
-//import home from './components/home.js';
+import Home from './components/home.js';
 import Userprofile from './components/userprofile.js';
 import Search from './components/search.js';
 import Matched from './components/matched.js';
@@ -20,11 +20,12 @@ if(document.getElementById('matched') !== null) {
   ReactDOM.render(
     <Userprofile />,
     document.getElementById('userprofile'));
+}else if(document.getElementById('home') !== null) {
+  ReactDOM.render(
+    <Home />,
+   document.getElementById('home'));
 }
-
 /*
-if(document.getElementById('home') !== null) {
-  ReactDOM.render(<home />, document.getElementById('home'));
 } else if(document.getElementById('search') !== null) {
   ReactDOM.render(<search />, document.getElementById('search'));
 } else if(document.getElementById('userprofile') !== null) {
