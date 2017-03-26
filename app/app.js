@@ -16,6 +16,10 @@ if(document.getElementById('matched') !== null) {
   ReactDOM.render(
     <Search />,
     document.getElementById('search'));
+} else if(document.getElementById('userprofile') !== null) {
+  ReactDOM.render(
+    <Userprofile />,
+    document.getElementById('userprofile'));
 }
 
 /*
