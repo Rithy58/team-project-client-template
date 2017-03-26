@@ -5,7 +5,7 @@ import Home from './components/home.js';
 import Userprofile from './components/userprofile.js';
 import Search from './components/search.js';
 import Matched from './components/matched.js';
-//import message from './components/message.js';
+import Message from './components/message.js';
 
 if(document.getElementById('matched') !== null) {
   ReactDOM.render(
@@ -24,4 +24,8 @@ if(document.getElementById('matched') !== null) {
   ReactDOM.render(
     <Home />,
    document.getElementById('home'));
+} else if(document.getElementById('message') !== null) {
+  ReactDOM.render(
+    <Message />,
+   document.getElementById('message'));
 }
