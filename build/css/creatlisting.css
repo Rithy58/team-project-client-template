@@ -2,6 +2,10 @@ body {
   background: #F1F3FA;
 }
 
+.ubarter-search {
+  width: 700px;
+}
+
 .panel-body {
   background-color: #fff !important;
   border-style: solid;
