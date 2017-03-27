@@ -1,6 +1,6 @@
 body {
   background: #F1F3FA;
-  padding-top: 60px;
+  padding-top: 70px;
 }
 
 h3 {
@@ -11,6 +11,19 @@ p {
   color: green;
   font-weight: bold;
   font-size: 25px;
+}
+
+.ubarter-search {
+  width: 700px;
+}
+.nav-btn{
+  height: 40px;
+}
+.nav-search{
+  height: 40px;
+}
+.ubarter-green {
+  color: green;
 }
 
 .logo {

@@ -10,7 +10,18 @@
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
-
+.nav-btn{
+  height: 40px;
+}
+.nav-search{
+  height: 40px;
+}
+.ubarter-green {
+  color: green;
+}
+.ubarter-search {
+  width: 700px;
+}
 body {
   padding-top: 60px;
   margin-top: 50px;
