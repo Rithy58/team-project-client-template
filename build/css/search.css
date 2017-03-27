@@ -19,6 +19,9 @@
 .ubarter-green {
   color: green;
 }
+.ubarter-search {
+  width: 700px;
+}
 body {
   padding-top: 60px;
   margin-top: 50px;
