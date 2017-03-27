@@ -1,11 +1,13 @@
 import React from 'react';
 import Search_Feed from './search_feed';
 import Search_Feed_Item from './search_feed_item';
+import Navbar from './navbar.js';
 
 export default class Search extends React.Component {
   render() {
     return (
           <div>
+            <Navbar/>
             <Search_Feed
               numberOfResults='14'
               query='Algorithms'
