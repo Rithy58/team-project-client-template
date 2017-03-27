@@ -11,7 +11,15 @@ body {
   border: 2px solid green !important;
   height: 463px;
 }
-
+.nav-btn{
+  height: 40px;
+}
+.nav-search{
+  height: 40px;
+}
+.ubarter-green {
+  color: green;
+}
 #sidebarPanel {
   border: 2px solid green !important;
   height: 463px;
