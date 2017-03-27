@@ -24,9 +24,9 @@ export default class Navbar extends React.Component {
             <form className="navbar-form navbar-left" role="search">
 
               <div className="input-group ubarter-search">
-                <input type="text" className="form-control" placeholder="Search Textbooks!"/>
+                <input type="text" className="form-control nav-search" placeholder="Search Textbooks!"/>
                 <span className="input-group-btn">
-                  <button type="submit" className="btn btn-default">
+                  <button type="submit" className="btn nav-btn btn-default">
                     <span className="glyphicon glyphicon-search ubarter-green"></span>
                   </button>
                 </span>
