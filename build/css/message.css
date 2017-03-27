@@ -9,6 +9,7 @@ body {
 
 #msg-panel {
   border: 2px solid green !important;
+  height: 463px;
 }
 
 #sidebarPanel {
