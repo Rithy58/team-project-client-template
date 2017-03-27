@@ -13,6 +13,7 @@ body {
 
 #sidebarPanel {
   border: 2px solid green !important;
+  height: 463px;
 }
 .chat-img {
   margin-right: 10px;
@@ -43,4 +44,8 @@ body {
 .currently_typing {
   font-size: 12px;
   color: #c0c0c0;
+}
+
+.ubarter-search {
+  width: 700px;
 }
