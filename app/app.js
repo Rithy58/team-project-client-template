@@ -6,6 +6,7 @@ import Userprofile from './components/userprofile.js';
 import Search from './components/search.js';
 import Matched from './components/matched.js';
 import Message from './components/message.js';
+import CreateListing from './components/createlisting.js';
 
 if(document.getElementById('matched') !== null) {
   ReactDOM.render(
@@ -28,4 +29,8 @@ if(document.getElementById('matched') !== null) {
   ReactDOM.render(
     <Message />,
    document.getElementById('message'));
+} else if(document.getElementById('createlisting') !== null) {
+  ReactDOM.render(
+    <CreateListing />,
+   document.getElementById('createlisting'));
 }
