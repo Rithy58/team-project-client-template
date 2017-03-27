@@ -17,7 +17,7 @@ export default class YourItem extends React.Component {
           <label>Upload Image</label>
           <div className="input-group">
               <span className="input-group-btn">
-                  <span className="btn btn-default btn-file btn-sm">
+                  <span className="btn borderbtn btn-default btn-file btn-sm">
                       Browse...<input type="file" id="imgInp" />
                   </span>
               </span>

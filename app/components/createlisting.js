@@ -30,7 +30,7 @@ export default class CreateListing extends React.Component {
             <div className="col-md-1"></div>
             <div className="col-md-5">
               <span className="pull-right">
-                <button type="submit" className="btn btn-sm">Submit</button>
+                <button type="submit" className="btn borderbtn btn-sm">Submit</button>
               </span>
             </div>
           </div>
