@@ -19,15 +19,16 @@ body{
 .ubarter-green {
   color: green;
 }
+.ubarter-search {
+  width: 700px;
+}
 .book-img{
   height:80px;
   width: 70px;
   padding:1px;
   border:1px solid #021a40;
 }
-.ubarter-search {
-  width: 700px;
-}
+
 .user-image{
   padding:1px;
   border:3px solid green;
