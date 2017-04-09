@@ -2,6 +2,7 @@ import React from 'react';
 import Search_Feed from './search_feed';
 import Home_Feed_Item from './home_feed_item';
 import Navbar from './navbar.js';
+import {getQueryData} from '../server.js';
 
 export default class Search extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ export default class Search extends React.Component {
       this.setState(queryData);
     });
   }
+
 
   render() {
     return (
