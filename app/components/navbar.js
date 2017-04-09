@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class Navbar extends React.Component {
   render() {
@@ -15,8 +16,9 @@ export default class Navbar extends React.Component {
               <span className="icon-bar"></span>
             </button>
             <h6/>
-            <img src="img/ubarter-trans.png" alt="uBarter" width="180" height="40" />
-
+            <Link to="/">
+              <img src="img/ubarter-trans.png" alt="uBarter" width="180" height="40" />
+            </Link>
             <h6/>
           </div>
 
