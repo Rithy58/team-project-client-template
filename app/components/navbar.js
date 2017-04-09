@@ -40,6 +40,16 @@ export default class Navbar extends React.Component {
           </div>
         </div>
       </nav>
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/message">Message</Link></li>
+          <li><Link to="/profile">Profile</Link></li>
+          <li><Link to="/search">Search</Link></li>
+          <li><Link to="/matched/1">Matched ID: 1</Link></li>
+          <li><Link to="/listing/create">Create Listing</Link></li>
+        </ul>
+      </nav>
     </div>
     )
   }
