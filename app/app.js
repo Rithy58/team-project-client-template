@@ -15,7 +15,7 @@ ReactDOM.render((
     <Route path="/message" components={Message}/>
     <Route path="/profile" components={Userprofile}/>
     <Route path="/search" components={Search}/>
-    <Route path="/matched" components={Matched}/>
+    <Route path="/matched/:id" components={Matched}/>
     <Route path="/listing/create" components={CreateListing}/>
   </Router>
 ), document.getElementById('app'));
