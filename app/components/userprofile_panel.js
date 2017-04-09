@@ -1,4 +1,5 @@
 import React from 'react';
+import Userprofile_Item from './userprofile_item.js'
 
 export default class Userprofile_Panel extends React.Component {
   render() {
@@ -11,20 +12,15 @@ export default class Userprofile_Panel extends React.Component {
             Edit Listing
           </button>
         </span>
-        <div className="media">
-        <div className="media-left">
-          <img className="media-object" src="img/examplebook.jpg" alt="Essentials of Marketing Research" width="130" height="180" />
-        </div>
-          <div className="media-body">
-            <h4 className="media-heading">Essentials of Marketing Research</h4>
-            <ul className="list-group">
-              <li className="list-group-item">Author: Joseph F. Hair, Jr.</li>
-              <li className="list-group-item">Edition: 3rd Edition</li>
-              <li className="list-group-item">ISBN: 978-0-07-802881</li>
-              <li className="list-group-item">Publisher: The McGraw-Hill Companies, Inc.</li>
-            </ul>
-          </div>
-        </div>
+        <Userprofile_Item
+          pic="img/examplebook.jpg"
+          title="Essentials of Marketing Research"
+          author="Joseph F. Hair, Jr."
+          edition="3rd Edition"
+          isbn="978-0-07-802881"
+          publisher="The McGraw-Hill Companies, Inc."
+          />
+
       </div>
       <br />
       <div className="panel-body"><span className="panel-block">TEXTBOOKS I NEED</span>
@@ -34,20 +30,14 @@ export default class Userprofile_Panel extends React.Component {
             Edit Listing
           </button>
         </span>
-        <div className="media">
-        <div className="media-left">
-          <img className="media-object" src="img/examplebook2.jpg" alt="The Official Guide to GRE" />
-        </div>
-          <div className="media-body">
-            <h4 className="media-heading">The Official Guide to the GRE revised General Test</h4>
-            <ul className="list-group">
-              <li className="list-group-item">Author: N/A</li>
-              <li className="list-group-item">Edition: 2nd Edition</li>
-              <li className="list-group-item">ISBN: 978-0-07-179123-6</li>
-              <li className="list-group-item">Publisher: Educational Testing Service</li>
-            </ul>
-          </div>
-        </div>
+        <Userprofile_Item
+          pic="img/examplebook2.jpg"
+          title="The Official Guide to the GRE revised General Test"
+          author="N/A"
+          edition="2nd Edition"
+          isbn="978-0-07-179123-6"
+          publisher="Educational Testing Service"
+          />
       </div>
     </div>
 
