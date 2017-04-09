@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Matched_User from './matched_user.js';
-import Matched_User_Item from './matched_user_item.js'
+import Matched_User from './matched/matched_user.js';
+import Matched_User_Item from './matched/matched_user_item.js'
 
 export default class Matched extends React.Component {
   render() {
