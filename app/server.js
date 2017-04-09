@@ -10,3 +10,11 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
+export function getMatchedData(id, cb) {
+  var matchedData = readDocument('matched', id);
+  matchedData.users =
+    matchedData.users.map((id) => readDocument('users', id));
+  matchedData.items =
+    matchedData.items.map((id) => readDocument(('items'), id));
+  emulateServerReturn(matchedData, cb);
+}
