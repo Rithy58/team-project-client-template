@@ -87,7 +87,7 @@ var initialData = {
       "users": [
         1, 2
       ],
-      "items": [
+      "listings": [
         1, 2
       ]
     }
