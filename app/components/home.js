@@ -1,7 +1,7 @@
 import React from 'react';
-import Home_Feed_Item from './home_feed_item.js';
-import Home_Feed from './home_feed.js';
-import Home_Side_Bar from './home_side_bar.js';
+import Home_Feed_Item from './home/home_feed_item.js';
+import Home_Feed from './home/home_feed.js';
+import Home_Side_Bar from './home/home_side_bar.js';
 import Navbar from './navbar.js';
 import {getHomeFeedData} from '../server.js'
 

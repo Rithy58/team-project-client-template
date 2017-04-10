@@ -10,13 +10,11 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
-export function getFeedData(id, cb){
+export function getHomeFeedData(id, cb){
   var feedData = readDocument('feed',id);
-  feedData.users =
-    feedData.users.map((id) => readDocument('users', id));
-    feedData.items =
-      feedData.items.map((id) => readDocument(('items'), id));
-    emulateServerReturn(feedData, cb);
+  feedData.items =
+    feedData.items.map((id) => readDocument(('feeditems'), id));
+  emulateServerReturn(feedData, cb);
 }
 
 export function getMatchedData(id, cb) {

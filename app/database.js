@@ -91,6 +91,31 @@ var initialData = {
         1, 2
       ]
     }
+  },
+  "feeditems": {
+    "1": {
+      "pic": "https://upload.wikimedia.org/wikipedia/en/4/41/Clrs3.jpeg",
+      "title": "Introduction to Algorithms",
+      "author":"Thomas H. Cormen",
+      "edition":"3rd Edition",
+      "isbn": "978-0262033848",
+      "publisher": "PubPub, Inc"
+    },
+    "2": {
+      "pic": "https://images-na.ssl-images-amazon.com/images/I/41%2Bzl9fgEML._SX431_BO1,204,203,200_.jpg",
+      "title": "Discrete Mathematics with Applications",
+      "author":"Susanna S. Epp",
+      "edition":"4th Edition",
+      "isbn": "978-0495391326",
+      "publisher": "PubPub, Inc"
+    }
+  },
+  "feed":{
+    "1":{
+      "feeditems":[
+        1,2
+      ]
+    }
   }
 };
 
