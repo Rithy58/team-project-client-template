@@ -5,14 +5,15 @@ export default class Matched_User_Item extends React.Component {
 		return (
 			<div className="media">
 				<div className="media-left">
-					<img className="media-object" src={ this.props.img } alt="item"/>
+					<img className="media-object" src={ this.props.item.picture } alt="item"/>
 				</div>
 				<div className="media-body">
-					<h4 className="media-heading">{ this.props.name }</h4>
+					<h4 className="media-heading">{ this.props.title }</h4>
 					<ul className="list-group">
-            { this.props.details.map((detail, index) =>
-              <li className="list-group-item" key={ index }>{ detail }</li>
-            )}
+            <li className="list-group-item">{ this.props.item.picture }</li>
+						<li className="list-group-item">{ this.props.item.title }</li>
+						<li className="list-group-item">{ this.props.item.isbn }</li>
+						<li className="list-group-item">{ this.props.item.price }</li>
 					</ul>
 				</div>
 			</div>

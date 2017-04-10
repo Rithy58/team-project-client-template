@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Matched_User from './matched/matched_user.js';
-import Matched_User_Item from './matched/matched_user_item.js';
 import {getMatchedData} from '../server.js';
 
 export default class Matched extends React.Component {
@@ -13,11 +12,17 @@ export default class Matched extends React.Component {
         "user": {
           "username": ""
         },
-        "listing": {}
+        "listing": {
+          "want": [],
+          "has": []
+        }
       },
       "2": {
         "user": {},
-        "listing": {}
+        "listing": {
+          "want": [],
+          "has": []
+        }
       }
     };
   }
@@ -39,31 +44,14 @@ export default class Matched extends React.Component {
             <div className="row">
               <Matched_User
                 username={this.state['1'].user.username}
-                avatar='/img/user1.jpg'>
-                <Matched_User_Item
-                  img="/img/examplebook.jpg"
-                  name="Example Textbook"
-                  details={
-                    ['Author: Tim Richard',
-                    'Edition: 58th Edition',
-                    'ISBN: 978 1123 33454',
-                    'Publisher: PubPub, Inc']
-                  }/>
-            </Matched_User>
+                avatar='/img/user1.jpg'
+                listing={this.state['1'].listing}
+              />
               <Matched_User
-                username='Tommy'
+                username={this.state['2'].user.username}
                 avatar='/img/user2.jpg'
-              >
-              <Matched_User_Item
-                img="/img/examplebook2.jpg"
-                name="Another Example Textbook"
-                details={
-                  ['Author: Tim Richard',
-                  'Edition: 58th Edition',
-                  'ISBN: 978 1123 33454',
-                  'Publisher: PubPub, Inc']
-                }/>
-            </Matched_User>
+                listing={this.state['2'].listing}
+              />
             </div>
             <br />
             <div className="row">
