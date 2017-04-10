@@ -37,30 +37,30 @@ export function getMatchedData(matchedId, userId, cb) {
   if(matchedData.users[0] === userId) {
     matched['1'].user = readDocument('users', userId);
     matched['2'].user = readDocument('users', matchedData.users[1]);
-    matched['1'].user.listings =
+    matched['1'].listing =
       readDocument('listings', matchedData.listings[0]);
-    matched['2'].user.listings =
+    matched['2'].listing =
       readDocument('listings', matchedData.listings[1]);
   } else {
     matched['1'].user = readDocument('users', userId);
     matched['2'].user = readDocument('users', matchedData.users[0]);
-    matched['1'].user.listings =
+    matched['1'].listing =
       readDocument('listings', matchedData.listings[1]);
-    matched['2'].user.listings =
+    matched['2'].listing =
       readDocument('listings', matchedData.listings[0]);
   }
 
-  matched[1].user.listing = matched[1].user.listings.want.map(
+  matched['1'].listing.want = matched['1'].listing.want.map(
     (id) => readDocument('items', id)
   );
-  matched[1].user.listing = matched[1].user.listings.has.map(
+  matched['1'].listing.has = matched['1'].listing.has.map(
     (id) => readDocument('items', id)
   );
 
-  matched[2].user.listing = matched[2].user.listings.want.map(
+  matched['2'].listing.want = matched['2'].listing.want.map(
     (id) => readDocument('items', id)
   );
-  matched[2].user.listing = matched[2].user.listings.has.map(
+  matched['2'].listing.has = matched['2'].listing.has.map(
     (id) => readDocument('items', id)
   );
 
