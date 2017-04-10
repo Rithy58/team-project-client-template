@@ -2,6 +2,37 @@ import React from 'react';
 import {Link} from 'react-router';
 
 export default class Navbar extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        value: ""
+      };
+    }
+
+    handleKeyUp(e) {
+      if (e.key === "Enter") {
+        var comment = this.state.value.trim();
+        if (comment !== "") {
+          // Post comment
+
+          this.setState({value: ""});
+        }
+      }
+    }
+
+     /**
+      * Called when the user types a character into the status update box.
+      * @param e An Event object.
+      */
+     handleChange(e) {
+       // Prevent the event from "bubbling" up the DOM tree.
+       e.preventDefault();
+       // e.target is the React Virtual DOM target of the input event -- the
+       // <textarea> element. The textarea's `value` is the entire contents of
+       // what the user has typed in so far.
+       this.setState({value: e.target.value});
+     }
+
   render() {
     return (
       <div>
