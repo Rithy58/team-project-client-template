@@ -9,18 +9,16 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: []
+      "1": {
+        "feeditem": {}
+      }
     };
   }
-  refresh() {
-  getHomeData(this.props.user, (feedData) => {
-    this.setState(feedData);
-  });
-  }
   componentDidMount() {
-  this.refresh();
+    getHomeData(this.props.params.id, 1, (feedData) => {
+      this.setState(feedData);
+    });
   }
-
   render() {
     return (
       <div>
@@ -34,12 +32,12 @@ export default class Home extends React.Component {
               {this.state.results.map((feedItem) => {
                 return (
                   <Home_Feed_Item
-                    pic={feedItem.pic}
-                    title={feedItem.title}
-                    author={feedItem.author}
-                    edition={feedItem.edition}
-                    isbn={feedItem.isbn}
-                    publisher={feedItem.publisher}></Home_Feed_Item>
+                    pic={this.state['1'].feedItem.pic}
+                    title={this.state['1'].feedItem.title}
+                    author={this.state['1'].feedItem.author}
+                    edition={this.state['1'].feedItem.edition}
+                    isbn={this.state['1'].feedItem.isbn}
+                    publisher={this.state['1'].feedItem.publisher}></Home_Feed_Item>
                 )
               })}
               <Home_Feed_Item
