@@ -110,12 +110,21 @@ var initialData = {
       "edition":"4th Edition",
       "isbn": "978-0495391326",
       "publisher": "PubPub, Inc"
+    },
+    "3": {
+      "_id": 2,
+      "pic": "https://images-na.ssl-images-amazon.com/images/I/517euJ3iGeL._SX258_BO1,204,203,200_.jpg",
+      "title": "Java for Dummies",
+      "author":"Barry Burd",
+      "edition":"6th Edition",
+      "isbn": "978-1118407806",
+      "publisher": "PubPub, Inc"
     }
   },
   "feed":{
     "1":{
       "feeditems":[
-        1,2
+        1,2,3
       ]
     }
   },
