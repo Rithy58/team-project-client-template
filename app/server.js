@@ -10,7 +10,7 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
-export function getHomeFeedData(id, cb){
+export function getHomeData(id, cb){
   var feedData = readDocument('feed',id);
   feedData.items =
     feedData.items.map((id) => readDocument(('feeditems'), id));

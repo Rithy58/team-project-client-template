@@ -1,24 +1,27 @@
 import React from 'react';
-import Home_Feed_Item from './home/home_feed_item.js';
+import Home_Feed_Item from './home/home_feed_item';
 import Home_Feed from './home/home_feed.js';
 import Home_Side_Bar from './home/home_side_bar.js';
 import Navbar from './navbar.js';
-import {getHomeFeedData} from '../server.js'
+import {getHomeData} from '../server.js';
 
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      contents: []
+      results: []
     };
   }
-  componentDidMount() {
-    getHomeFeedData(this.props.user, (feedData) => {
-      this.setState(feedData);
-    });
+  refresh() {
+  getHomeData(this.props.user, (feedData) => {
+    this.setState(feedData);
+  });
   }
+  componentDidMount() {
+  this.refresh();
+  }
+
   render() {
-    var data = this.props.data;
     return (
       <div>
         <Navbar/>
@@ -28,18 +31,39 @@ export default class Home extends React.Component {
               User Postings
             </div>
             <Home_Feed>
-              {
-                data.feeditems.map((data, i) => {
-                // i is comment's index in comments array
+              {this.state.results.map((feedItem) => {
                 return (
-                  <Home_Feed_Item key={i} pic={data.pic} title={data.title} author={data.contents.author} edition={data.edition} isbn={data.isbn} publisher={data.publisher}>
-                    {data.contents}
-                  </Home_Feed_Item>
-                );
-              })
-              }
+                  <Home_Feed_Item
+                    pic={feedItem.pic}
+                    title={feedItem.title}
+                    author={feedItem.author}
+                    edition={feedItem.edition}
+                    isbn={feedItem.isbn}
+                    publisher={feedItem.publisher}></Home_Feed_Item>
+                )
+              })}
+              <Home_Feed_Item
+                pic="https://upload.wikimedia.org/wikipedia/en/4/41/Clrs3.jpeg"
+                title='Introduction to Algorithms'
+                author='Thomas H. Cormen'
+                edition="3rd Edition"
+                isbn='978-0262033848'
+                publisher='PubPub, Inc'></Home_Feed_Item>
+              <Home_Feed_Item
+                pic="https://images-na.ssl-images-amazon.com/images/I/41%2Bzl9fgEML._SX431_BO1,204,203,200_.jpg"
+                title='Discrete Mathematics with Applications'
+                author='Susanna S. Epp'
+                edition='4th Edition'
+                isbn='978-0495391326'
+                publisher='PubPub, Inc'></Home_Feed_Item>
+              <Home_Feed_Item
+                pic="https://images-na.ssl-images-amazon.com/images/I/517euJ3iGeL._SX258_BO1,204,203,200_.jpg"
+                title='Java for Dummies'
+                author='Barry Burd'
+                edition='6th Edition'
+                isbn='978-1118407806'
+                publisher='PubPub, Inc'></Home_Feed_Item>
             </Home_Feed>
-
             <Home_Side_Bar
               name="Bunny Carrots"
               pic='http://thedesigninspiration.com/wp-content/uploads/2014/07/Cute-Rabbits-026.jpg'>
