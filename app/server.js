@@ -45,17 +45,17 @@ export function getMatchedData(matchedId, userId, cb) {
       readDocument('listings', matchedData.listings[0]);
   }
 
-  matched[1].user.listing = matched[1].user.listing.want.map(
+  matched[1].user.listing = matched[1].user.listings.want.map(
     (id) => readDocument('items', id)
   );
-  matched[1].user.listing = matched[1].user.listing.has.map(
+  matched[1].user.listing = matched[1].user.listings.has.map(
     (id) => readDocument('items', id)
   );
 
-  matched[2].user.listing = matched[2].user.listing.want.map(
+  matched[2].user.listing = matched[2].user.listings.want.map(
     (id) => readDocument('items', id)
   );
-  matched[2].user.listing = matched[2].user.listing.has.map(
+  matched[2].user.listing = matched[2].user.listings.has.map(
     (id) => readDocument('items', id)
   );
 
