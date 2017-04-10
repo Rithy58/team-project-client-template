@@ -30,6 +30,18 @@ var initialData = {
       "matched": [
         1
       ]
+    },
+    "3": {
+      "_id": 3,
+      "username": "Bunny Carrots",
+      "hash": "1234",
+      "profile": 3,
+      "listings": [
+
+      ],
+      "matched": [
+
+      ]
     }
   },
   "profiles": {
@@ -41,6 +53,13 @@ var initialData = {
       "major": "Computer Science"
     },
     "2": {
+      "picture": "url",
+      "email": "beta@umass.edu",
+      "title": "Student",
+      "university": "UMass",
+      "major": "Computer Science"
+    },
+    "3": {
       "picture": "url",
       "email": "beta@umass.edu",
       "title": "Student",
@@ -122,7 +141,7 @@ var initialData = {
     }
   },
   "feed":{
-    "1":{
+    "3":{
       "feeditems":[
         1,2,3
       ]

@@ -9,13 +9,13 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+        "user":{},
         "feeditem": []
 
     };
   }
   componentDidMount() {
-    getHomeData(1, (feedData) => {
+    getHomeData(3, (feedData) => {
       this.setState(feedData);
     });
   }
@@ -46,7 +46,7 @@ export default class Home extends React.Component {
 
             </Home_Feed>
             <Home_Side_Bar
-              name="Bunny Carrots"
+              name={this.state.user.username}
               pic='http://thedesigninspiration.com/wp-content/uploads/2014/07/Cute-Rabbits-026.jpg'>
               <Home_Feed_Item
                 pic="https://upload.wikimedia.org/wikipedia/en/4/41/Clrs3.jpeg"
