@@ -118,6 +118,26 @@ var initialData = {
         1,2
       ]
     }
+  },
+  "message": {
+    "1": {
+      "user1": {
+        "user": 1,
+        "message": [
+          "Hi",
+          "How are you.",
+          "How's your day been?"
+        ]
+
+      },
+      "user2": {
+        "user": 2,
+        "message": [
+
+        ]
+
+      }
+    }
   }
 };
 
