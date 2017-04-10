@@ -2,11 +2,96 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Modify with your startup's name!
-var startupName = 'uBarter';
+var startupName = 'UBarter';
 
 // Put your mock objects here, as in Workshop 4
 var initialData = {
-
+  "users": {
+    "1": {
+      "_id": 1,
+      "username": "Alpha",
+      "hash": "1234",
+      "profile": 1,
+      "listings": [
+        1
+      ],
+      "matched": [
+        1
+      ]
+    },
+    "2": {
+      "_id": 2,
+      "username": "Beta",
+      "hash": "5678",
+      "profile": 2,
+      "listings": [
+        2
+      ],
+      "matched": [
+        1
+      ]
+    }
+  },
+  "profiles": {
+    "1": {
+      "picture": "url",
+      "email": "alpha@umass.edu",
+      "title": "Student",
+      "university": "UMass",
+      "major": "Computer Science"
+    },
+    "2": {
+      "picture": "url",
+      "email": "beta@umass.edu",
+      "title": "Student",
+      "university": "UMass",
+      "major": "Computer Science"
+    }
+  },
+  "listings": {
+    "1": {
+      "owner": 1,
+      "want": [
+        1
+      ],
+      "has": [
+        2
+      ]
+    },
+    "2": {
+      "owner": 2,
+      "want": [
+        2
+      ],
+      "has": [
+        1
+      ]
+    }
+  },
+  "items": {
+    "1": {
+      "picture": "url",
+      "title": "CS220",
+      "isbn": "4321",
+      "price": 120
+    },
+    "2": {
+      "picture": "url",
+      "title": "CS240",
+      "isbn": "8765",
+      "price": 120
+    }
+  },
+  "matched": {
+    "1": {
+      "users": [
+        1, 2
+      ],
+      "items": [
+        1, 2
+      ]
+    }
+  }
 };
 
 var data = JSON.parse(localStorage.getItem(startupName));

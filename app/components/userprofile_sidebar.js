@@ -7,15 +7,15 @@ export default class Userprofile_Sidebar extends React.Component {
         <div className="profile-sidebar">
 
           <div className="profile-userpic text-center">
-            <img src="img/avatar.png" alt="avatar" className="img-circle center-block" width="140" height="140" />
+            <img src={this.props.avatar} alt="avatar" className="img-circle center-block" width="140" height="140" />
           </div>
 
           <div className="profile-usertitle">
             <div className="profile-usertitle-name">
-              <h3 className="text-center">JEREMY LEE</h3>
+              <h3 className="text-center">{this.props.author}</h3>
             </div>
             <div className="profile-usertitle-job">
-              <h4>Founder of uBarter</h4>
+              <h4>{this.props.title}</h4>
             </div>
           </div>
 
@@ -37,19 +37,14 @@ export default class Userprofile_Sidebar extends React.Component {
           <div className="profile-usermenu">
             <ul className="nav">
               <li className="active">
-                <a href="#">
+                <a href="../../build/userprofile.html">
                   <i className="glyphicon glyphicon-th-list"></i>
                   My Listings </a>
               </li>
               <li>
-                <a href="#">
+                <a href="../../build/message.html">
                 <i className="glyphicon glyphicon-ok"></i>
                 Matches </a>
-              </li>
-              <li>
-                <a href="#">
-                <i className="glyphicon glyphicon-flag"></i>
-                Help </a>
               </li>
             </ul>
           </div>

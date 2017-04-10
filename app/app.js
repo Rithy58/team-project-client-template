@@ -13,9 +13,9 @@ ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" components={Home}/>
     <Route path="/message" components={Message}/>
-    <Route path="/profile" componenets={Userprofile}/>
-    <Route path="/search" componenets={Search}/>
-    <Route path="/matched" componenets={Matched}/>
-    <Route path="/listing/create" componenets={CreateListing}/>
+    <Route path="/profile" components={Userprofile}/>
+    <Route path="/search" components={Search}/>
+    <Route path="/matched/:id" components={Matched}/>
+    <Route path="/listing/create" components={CreateListing}/>
   </Router>
 ), document.getElementById('app'));
