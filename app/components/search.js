@@ -25,7 +25,7 @@ export default class Search extends React.Component {
   render() {
     return (
           <div>
-            <Navbar/>
+            <Navbar onSearch={(query) => this.onSearch(query)}/>
             <Search_Feed
               numberOfResults='14'
               query='Algorithms'

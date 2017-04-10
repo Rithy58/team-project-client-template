@@ -12,11 +12,11 @@ export default class Navbar extends React.Component {
     handleKeyUp(e) {
       if (e.key === "Enter") {
         // Prevent the event from "bubbling" up the DOM tree.
-        e.preventDefault(); 
+        e.preventDefault();
         var comment = this.state.value.trim();
         if (comment !== "") {
-          // Post comment - how to send to Search?
-          // this.props.onPost(this.state.value);
+          // Post comment - send to Search
+          this.props.onSearch(this.state.value);
           this.setState({value: ""});
         }
       }
