@@ -24,6 +24,15 @@ export function getHomeData(id, cb){
   emulateServerReturn(feed, cb);
 }
 
+export function getMessageData(messagedId, userId, cb) {
+  var messagedData = readDocument('messaged', messagedId);
+  messagedData['user1'].user = readDocument('users', userId);
+  messagedData['user2'].user = readDocument('users', messagedData.user2.user);
+
+
+  emulateServerReturn(messagedData,cb);
+}
+
 export function getMatchedData(matchedId, userId, cb) {
   var matched = {
     "1": {
@@ -82,4 +91,25 @@ export function getQueryData(query, cb) {
   // invokes (calls) the "cb" function some time in the future.
   emulateServerReturn(queryData, cb);
 
+}
+
+/**
+ * Adds a new comment to the database on the given feed item.
+ * Returns the updated FeedItem object.
+ */
+export function postComment(messageId, author, contents, cb) {
+  // Since a CommentThread is embedded in a FeedItem object,
+  // we don't have to resolve it. Read the document,
+  // update the embedded object, and then update the
+  // document in the database.
+  var messageItem = readDocument('messageItem', messageId);
+  messageItem.comments.push({
+    "author": author,
+    "contents": contents,
+    "postDate": new Date().getTime()
+  });
+  writeDocument('feedItems', messageItem);
+  // Return a resolved version of the feed item so React can
+  // render it.
+  emulateServerReturn(messageItem, cb);
 }
