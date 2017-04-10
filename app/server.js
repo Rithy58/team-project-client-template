@@ -12,13 +12,15 @@ function emulateServerReturn(data, cb) {
 
 export function getHomeData(id, cb){
   var feed = {
-    "1": {
-      "feeditem": {}
-    }
+
+      "feeditem": []
+
   };
   var feedData = readDocument('feed',id);
-  feed[1].feeditem = readDocument('feeditems', "1");
-  emulateServerReturn(feedData, cb);
+  feed.feeditem = feedData.feeditems.map(
+    (index)=>readDocument('feeditems', index)
+  );
+  emulateServerReturn(feed, cb);
 }
 
 export function getMatchedData(matchedId, userId, cb) {
