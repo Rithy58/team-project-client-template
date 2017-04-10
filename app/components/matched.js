@@ -5,6 +5,29 @@ import Matched_User_Item from './matched/matched_user_item.js';
 import {getMatchedData} from '../server.js';
 
 export default class Matched extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      "1": {
+        "user": {
+          "username": ""
+        },
+        "listing": {}
+      },
+      "2": {
+        "user": {},
+        "listing": {}
+      }
+    };
+  }
+
+  componentDidMount() {
+    getMatchedData(this.props.params.id, 1, (feedData) => {
+      this.setState(feedData);
+    });
+  }
+
   render() {
     return (
       <div className="container">
@@ -15,7 +38,7 @@ export default class Matched extends React.Component {
           <div className="panel-body">
             <div className="row">
               <Matched_User
-                username='Rithy58'
+                username={this.state['1'].user.username}
                 avatar='/img/user1.jpg'>
                 <Matched_User_Item
                   img="/img/examplebook.jpg"
