@@ -69,7 +69,7 @@ export function getMatchedData(matchedId, userId, cb) {
 */
 export function getQueryData(query, cb) {
   // Get the item object with the id "query".
-  var queryData = readDocument('items', query);
+  var queryData = readDocument('feeditems', query);
   // Return FeedData with resolved references.
   // emulateServerReturn will emulate an asynchronous server operation, which
   // invokes (calls) the "cb" function some time in the future.

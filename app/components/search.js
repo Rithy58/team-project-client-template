@@ -1,6 +1,6 @@
 import React from 'react';
 import Search_Feed from './search_feed';
-import Home_Feed_Item from './home/home_feed_item';
+import Home_Feed_Item from './home_feed_item';
 import Navbar from './navbar.js';
 import {getQueryData} from '../server.js';
 
@@ -33,6 +33,7 @@ export default class Search extends React.Component {
               {this.state.results.map((feedItem) => {
                 return (
                   <Home_Feed_Item
+                    id={feedItem._id}
                     pic={feedItem.pic}
                     title={feedItem.title}
                     author={feedItem.author}

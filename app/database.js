@@ -94,6 +94,7 @@ var initialData = {
   },
   "feeditems": {
     "1": {
+      "_id": 1,
       "pic": "https://upload.wikimedia.org/wikipedia/en/4/41/Clrs3.jpeg",
       "title": "Introduction to Algorithms",
       "author":"Thomas H. Cormen",
@@ -102,6 +103,7 @@ var initialData = {
       "publisher": "PubPub, Inc"
     },
     "2": {
+      "_id": 2,
       "pic": "https://images-na.ssl-images-amazon.com/images/I/41%2Bzl9fgEML._SX431_BO1,204,203,200_.jpg",
       "title": "Discrete Mathematics with Applications",
       "author":"Susanna S. Epp",
