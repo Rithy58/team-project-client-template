@@ -29,17 +29,13 @@ export default class Home extends React.Component {
               User Postings
             </div>
             <Home_Feed>
-              {this.state.results.map((feedItem) => {
-                return (
-                  <Home_Feed_Item
-                    pic={this.state['1'].feedItem.pic}
-                    title={this.state['1'].feedItem.title}
-                    author={this.state['1'].feedItem.author}
-                    edition={this.state['1'].feedItem.edition}
-                    isbn={this.state['1'].feedItem.isbn}
-                    publisher={this.state['1'].feedItem.publisher}></Home_Feed_Item>
-                )
-              })}
+              <Home_Feed_Item
+                pic={this.state['1'].feeditem.pic}
+                title={this.state['1'].feeditem.title}
+                author={this.state['1'].feeditem.author}
+                edition={this.state['1'].feeditem.edition}
+                isbn={this.state['1'].feeditem.isbn}
+                publisher={this.state['1'].feeditem.publisher}></Home_Feed_Item>
               <Home_Feed_Item
                 pic="https://upload.wikimedia.org/wikipedia/en/4/41/Clrs3.jpeg"
                 title='Introduction to Algorithms'

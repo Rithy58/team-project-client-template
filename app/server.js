@@ -13,12 +13,11 @@ function emulateServerReturn(data, cb) {
 export function getHomeData(id, cb){
   var feed = {
     "1": {
-      "feeditems": {}
+      "feeditem": {}
     }
   };
   var feedData = readDocument('feed',id);
-  feed[1].feeditems =
-    feedData[1].items.map((id) => readDocument('feeditems', id));
+  feed[1].feeditem = readDocument('feeditems', "1");
   emulateServerReturn(feedData, cb);
 }
 
