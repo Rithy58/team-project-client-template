@@ -11,10 +11,12 @@ export default class Navbar extends React.Component {
 
     handleKeyUp(e) {
       if (e.key === "Enter") {
+        // Prevent the event from "bubbling" up the DOM tree.
+        e.preventDefault(); 
         var comment = this.state.value.trim();
         if (comment !== "") {
-          // Post comment
-
+          // Post comment - how to send to Search?
+          // this.props.onPost(this.state.value);
           this.setState({value: ""});
         }
       }
@@ -24,14 +26,11 @@ export default class Navbar extends React.Component {
       * Called when the user types a character into the status update box.
       * @param e An Event object.
       */
-     handleChange(e) {
-       // Prevent the event from "bubbling" up the DOM tree.
-       e.preventDefault();
-       // e.target is the React Virtual DOM target of the input event -- the
-       // <textarea> element. The textarea's `value` is the entire contents of
-       // what the user has typed in so far.
-       this.setState({value: e.target.value});
-     }
+      handleChange(e) {
+        // Prevent the event from "bubbling" up the DOM tree.
+        e.preventDefault();
+        this.setState({value: e.target.value});
+      }
 
   render() {
     return (
@@ -57,7 +56,9 @@ export default class Navbar extends React.Component {
             <form className="navbar-form navbar-left" role="search">
 
               <div className="input-group ubarter-search">
-                <input type="text" className="form-control nav-search" placeholder="Search Textbooks!"/>
+                <input type="text" className="form-control nav-search" placeholder="Search Textbooks!"
+                  value={this.state.value} onChange={(e) => this.handleChange(e)}
+                  onKeyUp={(e) => this.handleKeyUp(e)} />
                 <span className="input-group-btn">
                   <button type="submit" className="btn nav-btn btn-default">
                     <span className="glyphicon glyphicon-search ubarter-green"></span>
