@@ -18,6 +18,7 @@ export default class Home extends React.Component {
     });
   }
   render() {
+    var data = this.props.data;
     return (
       <div>
         <Navbar/>
@@ -27,11 +28,16 @@ export default class Home extends React.Component {
               User Postings
             </div>
             <Home_Feed>
-              {this.state.contents.map((feedItem) => {
-                return(
-                  <Home_Feed_Item key={feedItem._id} data={feedItem} />
+              {
+                data.feeditems.map((data, i) => {
+                // i is comment's index in comments array
+                return (
+                  <Home_Feed_Item key={i} pic={data.pic} title={data.title} author={data.contents.author} edition={data.edition} isbn={data.isbn} publisher={data.publisher}>
+                    {data.contents}
+                  </Home_Feed_Item>
                 );
-              })}
+              })
+              }
             </Home_Feed>
 
             <Home_Side_Bar

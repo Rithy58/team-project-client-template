@@ -20,7 +20,7 @@ export default class Home_Feed_Item extends React.Component {
           </div>
       </div>
     </div>
-    
+
     )
   }
 }
