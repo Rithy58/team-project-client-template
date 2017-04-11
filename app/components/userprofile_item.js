@@ -3,7 +3,7 @@ import React from 'react';
 export default class Userprofile_Item extends React.Component {
   render() {
     return (
-
+      <div className="books-spacing">
         <div className="media">
           <div className="media-left">
             <img className="media-object" src={this.props.pic}/>
@@ -17,6 +17,7 @@ export default class Userprofile_Item extends React.Component {
             </ul>
           </div>
       </div>
+    </div>
 
     )
   }

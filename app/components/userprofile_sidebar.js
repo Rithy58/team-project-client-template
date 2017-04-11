@@ -29,7 +29,6 @@ export default class Userprofile_Sidebar extends React.Component {
           </div>
           <div className="profile-userbuttons">
             <button type="button" className="btn btn-sm">
-                <i className="glyphicon glyphicon-wrench"></i>
                 Account Settings
               </button>
           </div>

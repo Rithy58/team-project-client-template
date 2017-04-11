@@ -578,3 +578,7 @@ p {
   background: #fff;
   min-height: 460px;
 }
+
+.books-spacing {
+  margin-top: 10px;
+}

@@ -8,11 +8,10 @@ export default class Userprofile_Panel extends React.Component {
       <div className="panel-body"><span className="panel-block">TEXTBOOKS I OWN</span>
         <span className="profile-userbuttons">
         <button type="button" className="btn btn-sm pull-right">
-            <span className="glyphicon glyphicon-pencil"></span>
             Edit Listing
           </button>
         </span>
-        <br />
+
         <Userprofile_Item
           pic="img/examplebook.jpg"
           title="Essentials of Marketing Research"
@@ -29,7 +28,6 @@ export default class Userprofile_Panel extends React.Component {
       <div className="panel-body"><span className="panel-block">TEXTBOOKS I NEED</span>
         <span className="profile-userbuttons">
         <button type="button" className="btn btn-sm pull-right">
-            <span className="glyphicon glyphicon-pencil"></span>
             Edit Listing
           </button>
         </span>
