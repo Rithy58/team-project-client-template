@@ -12,28 +12,24 @@ export default class CreateListing extends React.Component {
       <Navbar />
       <div className="container enterc">
         <div className="row">
-
+          <div className="col-md-9">
           <YourItem>
             <ListingInfo />
           </YourItem>
-
-          <div className="col-md-1">
           </div>
 
+        
+          <div className="col-md-3">
           <SearchItem>
             <ListingInfo />
           </SearchItem>
+          <span>
+            <button type="submit" className="btn borderbtn btn-sm createlistingsubmitbutton">Submit</button>
+          </span>
+        </div>
 
           </div>
-          <div className="row">
-            <div className="col-md-5"></div>
-            <div className="col-md-1"></div>
-            <div className="col-md-5">
-              <span className="pull-right">
-                <button type="submit" className="btn borderbtn btn-sm">Submit</button>
-              </span>
-            </div>
-          </div>
+
         </div>
       </div>
     )

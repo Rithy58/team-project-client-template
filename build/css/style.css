@@ -7,7 +7,18 @@ body{
   background: #F1F3FA;
   margin-top: 40px;
 }
-
+.createlistingbutton{
+  height: 34px;
+  text-align: center;
+  border: 2px solid green !important;
+  padding-top: 9px;
+}
+.createlistingsubmitbutton{
+  margin-top: 10px;
+  border: 2px solid green !important;
+  border-radius: 25px !important;
+  width: 235px;
+}
 .name{
   margin-top: -45px;
   margin-bottom: 20px;
