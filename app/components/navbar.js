@@ -53,7 +53,7 @@ export default class Navbar extends React.Component {
           </div>
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form className="navbar-form navbar-left" role="search">
+            <div className="navbar-form navbar-left" role="search">
 
               <div className="input-group ubarter-search">
                 <input type="text" className="form-control nav-search" placeholder="Search Textbooks!"
@@ -65,7 +65,7 @@ export default class Navbar extends React.Component {
                   </button>
                 </span>
               </div>
-            </form>
+            </div>
             <ul className="nav navbar-nav navbar-right"/>
 
 

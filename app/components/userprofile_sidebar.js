@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class Userprofile_Sidebar extends React.Component {
   render() {
@@ -24,25 +25,16 @@ export default class Userprofile_Sidebar extends React.Component {
               Edit Profile
             </button>
           </div>
-          <div>
-            <h6> </h6>
-          </div>
-          <div className="profile-userbuttons">
-            <button type="button" className="btn btn-sm">
-                <i className="glyphicon glyphicon-wrench"></i>
-                Account Settings
-              </button>
-          </div>
 
           <div className="profile-usermenu">
             <ul className="nav">
               <li className="active">
-                <a href="../../build/userprofile.html">
+                <a href="#">
                   <i className="glyphicon glyphicon-th-list"></i>
                   My Listings </a>
               </li>
               <li>
-                <a href="../../build/message.html">
+                <a href="#">
                 <i className="glyphicon glyphicon-ok"></i>
                 Matches </a>
               </li>
