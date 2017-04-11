@@ -5,7 +5,7 @@ export default class Matched_User_Item extends React.Component {
 		return (
 			<div className="media">
 				<div className="media-left">
-					<img className="media-object" src={ this.props.item.picture } alt="item"/>
+					<img className="media-object" src="http://nancypearl.com/wp-content/uploads/2012/12/book-stack.gif" alt="item"/>
 				</div>
 				<div className="media-body">
 					<h4 className="media-heading">{ this.props.title }</h4>

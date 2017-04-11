@@ -114,6 +114,12 @@ var initialData = {
       "title": "CS230",
       "isbn": "1234",
       "price": 120
+    },
+    "4": {
+      "picture": "url",
+      "title": "CS326",
+      "isbn": "4321",
+      "price": 130
     }
   },
   "matched": {
@@ -158,7 +164,7 @@ var initialData = {
   "feed":{
     "3":{
       "items":[
-        1,2,3
+        1,2,3,4
       ]
     }
   },
