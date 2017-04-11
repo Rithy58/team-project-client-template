@@ -16,6 +16,9 @@ body{
 .messgesidebar{
   border: none !important;
 }
+.messageenvelope{
+  height: 20px;
+}
 .messagesearchbutton{
   height: 34px;
 }

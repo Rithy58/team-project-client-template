@@ -35,7 +35,7 @@ export default class Message_ChatInput extends React.Component {
         onKeyUp={(e) => this.handleKeyUp(e)} />
           <span className="input-group-btn">
             <button type="submit" className="btn btn-default">
-              <span className="glyphicon glyphicon-envelope"></span>
+              <span className="glyphicon glyphicon-envelope messageenvelope"></span>
             </button>
           </span>
       </div>
