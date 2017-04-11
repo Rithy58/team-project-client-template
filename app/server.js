@@ -25,7 +25,7 @@ export function getHomeData(id, cb){
 }
 
 export function getMessageData(messagedId, userId, cb) {
-  var messagedData = readDocument('messaged', messagedId);
+  var messagedData = readDocument('message', messagedId);
   messagedData['user1'].user = readDocument('users', userId);
   messagedData['user2'].user = readDocument('users', messagedData.user2.user);
 

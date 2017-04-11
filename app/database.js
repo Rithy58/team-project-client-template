@@ -161,7 +161,7 @@ var initialData = {
       "user2": {
         "user": 2,
         "message": [
-
+          "Howdy"
         ]
 
       }
