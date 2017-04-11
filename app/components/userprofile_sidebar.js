@@ -24,19 +24,11 @@ export default class Userprofile_Sidebar extends React.Component {
               Edit Profile
             </button>
           </div>
-          <div>
-            <h6> </h6>
-          </div>
-          <div className="profile-userbuttons">
-            <button type="button" className="btn btn-sm">
-                Account Settings
-              </button>
-          </div>
 
           <div className="profile-usermenu">
             <ul className="nav">
               <li className="active">
-                <a href="../../build/userprofile.html">
+                <a href="#">
                   <i className="glyphicon glyphicon-th-list"></i>
                   My Listings </a>
               </li>
