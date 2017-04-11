@@ -152,9 +152,7 @@ var initialData = {
       "user1": {
         "user": 1,
         "message": [
-          "Hi",
-          "How are you.",
-          "How's your day been?"
+          "Hi"
         ]
 
       },

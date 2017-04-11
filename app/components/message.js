@@ -86,9 +86,24 @@ export default class Message extends React.Component {
                    {
                      this.state['user2'].message.map(
                        (message,index) => {return (
-                         <Message_Main_User avatar='https://research.fb.com/wp-content/uploads/2016/11/john-vilk.jpg'
-                           author={this.state['user2'].user.username}
-                           message={message} key={index}/>
+                         <div>
+                           <Message_Main_User avatar='https://research.fb.com/wp-content/uploads/2016/11/john-vilk.jpg'
+                             author={this.state['user2'].user.username}
+                             message={message} key={index}/> <hr />
+                         </div>
+
+                        )}
+                     )
+                   }
+
+                   {
+                     this.state['user1'].message.map(
+                       (message,index) => {return (
+                         <div>
+                           <Message_Main_User avatar='https://research.fb.com/wp-content/uploads/2016/11/john-vilk.jpg'
+                             author={this.state['user1'].user.username}
+                             message={message} key={index}/> <hr />
+                         </div>
 
                         )}
                      )
@@ -96,20 +111,12 @@ export default class Message extends React.Component {
 
 
 
+
                    <p className="currently_typing">
                      John Vilk is typing...
                    </p>
 
-                   <Message_ChatInput onPost={(postContents) => this.onPost(postContents)} />
-                   {
-                     this.state['user1'].message.map(
-                       (message,index) => {return (
-                         <Message_Main_User avatar='https://research.fb.com/wp-content/uploads/2016/11/john-vilk.jpg'
-                           author={this.state['user1'].user.username}
-                           message={message} key={index}/>
-                       )}
-                     )
-                   }
+                   <Message_ChatInput />
 
 
                </div>

@@ -29,7 +29,6 @@ export function getMessageData(messagedId, userId, cb) {
   messagedData['user1'].user = readDocument('users', userId);
   messagedData['user2'].user = readDocument('users', messagedData.user2.user);
 
-
   emulateServerReturn(messagedData,cb);
 }
 
