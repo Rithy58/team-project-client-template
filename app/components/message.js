@@ -46,15 +46,15 @@ export default class Message extends React.Component {
     <div>
      <Navbar />
       <div className="container">
-       <div className="panel panel-default overall-panel" id="over-panel">
+       <div className="panel panel-default overall-panel messagecontainerbar" id="over-panel">
          <div className="panel-body">
            <div className="col-md-4">
              <div className="panel panel-default sidebar-panel" id="sidebarPanel">
-               <div className="panel-body">
+               <div className="panel-body messgesidebar">
                  <div className="input-group chat-users_list">
                    <input type="text" className="form-control" placeholder="Conversation" />
                    <span className="input-group-btn">
-                     <button type="submit" className="btn btn-default">
+                     <button type="submit" className="btn btn-default messagesearchbutton">
                        <span className="glyphicon glyphicon-search"></span>
                      </button>
                    </span>

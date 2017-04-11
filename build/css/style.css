@@ -13,6 +13,15 @@ body{
   border: 2px solid green !important;
   padding-top: 9px;
 }
+.messgesidebar{
+  border: none !important;
+}
+.messagesearchbutton{
+  height: 34px;
+}
+.messagecontainerbar{
+  border: none !important;
+}
 .createlistingsubmitbutton{
   margin-top: 10px;
   border: 2px solid green !important;
@@ -208,15 +217,16 @@ body {
 
 /* Message */
 #over-panel {
-  border: 2px solid green !important;
+  border-radius: 25px;
 }
 
 #msg-panel {
-  border: 2px solid green !important;
+  border-radius: 25px;
   height: 463px;
 }
 #sidebarPanel {
   border: 2px solid green !important;
+  border-radius: 25px;
   height: 463px;
 }
 .chat-img {
