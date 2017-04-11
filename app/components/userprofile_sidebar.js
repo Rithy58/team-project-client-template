@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class Userprofile_Sidebar extends React.Component {
   render() {
@@ -33,7 +34,7 @@ export default class Userprofile_Sidebar extends React.Component {
                   My Listings </a>
               </li>
               <li>
-                <a href="../../build/message.html">
+                <a href="#">
                 <i className="glyphicon glyphicon-ok"></i>
                 Matches </a>
               </li>
