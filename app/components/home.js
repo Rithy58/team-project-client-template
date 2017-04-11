@@ -10,7 +10,8 @@ export default class Home extends React.Component {
     super(props);
     this.state = {
         "user":{},
-        "feeditem": []
+        "item": [],
+        "saleitem":[]
 
     };
   }
@@ -30,15 +31,13 @@ export default class Home extends React.Component {
             </div>
             <Home_Feed>
               {
-                this.state.feeditem.map(
+                this.state.item.map(
                   (item, index) => {return (
                     <Home_Feed_Item
-                    pic={item.pic}
+                    picture={item.picture}
                     title={item.title}
-                    author={item.author}
-                    edition={item.edition}
                     isbn={item.isbn}
-                    publisher={item.publisher}
+                    price={item.price}
                     key={index}/>
                   )}
                 )
@@ -48,20 +47,18 @@ export default class Home extends React.Component {
             <Home_Side_Bar
               name={this.state.user.username}
               pic='http://thedesigninspiration.com/wp-content/uploads/2014/07/Cute-Rabbits-026.jpg'>
-              <Home_Feed_Item
-                pic="https://upload.wikimedia.org/wikipedia/en/4/41/Clrs3.jpeg"
-                title='Introduction to Algorithms'
-                author='Thomas H. Cormen'
-                edition="3rd Edition"
-                isbn='978-0262033848'
-                publisher='PubPub, Inc'></Home_Feed_Item>
-              <Home_Feed_Item
-                pic="https://images-na.ssl-images-amazon.com/images/I/41%2Bzl9fgEML._SX431_BO1,204,203,200_.jpg"
-                title='Discrete Mathematics with Applications'
-                author='Susanna S. Epp'
-                edition='4th Edition'
-                isbn='978-0495391326'
-                publisher='PubPub, Inc'></Home_Feed_Item>
+              {
+                this.state.saleitem.map(
+                  (item, index) => {return (
+                    <Home_Feed_Item
+                    picture={item.picture}
+                    title={item.title}
+                    isbn={item.isbn}
+                    price={item.price}
+                    key={index}/>
+                  )}
+                )
+              }
             </Home_Side_Bar>
           </div>
         </div>
