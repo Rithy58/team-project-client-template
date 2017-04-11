@@ -12,13 +12,16 @@ export default class Userprofile_Panel extends React.Component {
             Edit Listing
           </button>
         </span>
+        <br />
         <Userprofile_Item
           pic="img/examplebook.jpg"
           title="Essentials of Marketing Research"
-          author="Joseph F. Hair, Jr."
-          edition="3rd Edition"
-          isbn="978-0-07-802881"
-          publisher="The McGraw-Hill Companies, Inc."
+          details={
+            ['Author: Joseph F. Hair, Jr.',
+            'Edition: 3rd Edition',
+            'ISBN: 978-0-07-802881',
+            'Publisher: The McGraw-Hill Companies, Inc.']
+          }
           />
 
       </div>
@@ -30,13 +33,16 @@ export default class Userprofile_Panel extends React.Component {
             Edit Listing
           </button>
         </span>
+        <br />
         <Userprofile_Item
           pic="img/examplebook2.jpg"
           title="The Official Guide to the GRE revised General Test"
-          author="N/A"
-          edition="2nd Edition"
-          isbn="978-0-07-179123-6"
-          publisher="Educational Testing Service"
+          details={
+            ['Author: N/A',
+            'Edition: 2nd Edition',
+            'ISBN: 978-0-07-179123-6',
+            'Publisher: Educational Testing Service']
+          }
           />
       </div>
     </div>

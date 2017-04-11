@@ -12,7 +12,7 @@ export default class Userprofile extends React.Component {
         <Navbar/>
         <Userprofile_Sidebar
           author="JEREMY LEE"
-          title="Founder of uBarter"
+          title="Founder of UBarter"
           avatar="img/avatar.png"
           />
         <Userprofile_Panel />
