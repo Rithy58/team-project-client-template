@@ -149,6 +149,7 @@ var initialData = {
   },
   "message": {
     "1": {
+      "_id": 1,
       "user1": {
         "user": 1,
         "message": [

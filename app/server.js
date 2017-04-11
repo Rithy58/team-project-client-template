@@ -101,13 +101,9 @@ export function postComment(messageId, author, contents, cb) {
   // we don't have to resolve it. Read the document,
   // update the embedded object, and then update the
   // document in the database.
-  var messageItem = readDocument('messageItem', messageId);
-  messageItem.comments.push({
-    "author": author,
-    "contents": contents,
-    "postDate": new Date().getTime()
-  });
-  writeDocument('feedItems', messageItem);
+  var messageItem = readDocument('message', messageId);
+  messageItem.user1.message.push(contents);
+  writeDocument('message', messageItem);
   // Return a resolved version of the feed item so React can
   // render it.
   emulateServerReturn(messageItem, cb);
