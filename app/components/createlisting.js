@@ -8,8 +8,9 @@ import Navbar from './navbar.js';
 export default class CreateListing extends React.Component {
   render() {
     return (
-      <div className="container1">
+      <div>
       <Navbar />
+      <div className="container1">
       <div className="container enterc">
         <div className="row">
           <div className="col-md-9">
@@ -18,7 +19,7 @@ export default class CreateListing extends React.Component {
           </YourItem>
           </div>
 
-        
+
           <div className="col-md-3">
           <SearchItem>
             <ListingInfo />
@@ -32,6 +33,7 @@ export default class CreateListing extends React.Component {
 
         </div>
       </div>
+    </div>
     )
   }
 }
