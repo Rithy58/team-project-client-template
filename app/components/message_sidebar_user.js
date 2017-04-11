@@ -5,7 +5,7 @@ export default class Message_Sidebar_User extends React.Component {
     return (
     <div>
       <div className= "chat-img pull-left">
-        <img src={this.props.avatar } height="45px" alt="avatar" className="img-circle" />
+        <img src={this.props.avatar } height="45px" alt="avatar" className="img-circle user-image" />
       </div>
 
       <a href="#">{this.props.author}</a>

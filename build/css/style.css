@@ -13,6 +13,9 @@ body{
   border: 2px solid green !important;
   padding-top: 9px;
 }
+.searchbody{
+  border-radius: 25px;
+}
 .messgesidebar{
   border: none !important;
 }

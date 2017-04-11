@@ -4,7 +4,7 @@ export default class Search_Feed extends React.Component {
 render() {
 return (
 <div className="col-md-7">
-  <div className="panel panel-default fb-status-update">
+  <div className="panel panel-default fb-status-update searchbody">
     <div className="panel-body">
       {this.props.numberOfResults} results for <b> {this.props.query} </b>
       <span className="pull-right"> Sort by <b>{this.props.sortType} </b><span className="caret"></span></span>
