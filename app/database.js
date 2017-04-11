@@ -37,10 +37,10 @@ var initialData = {
       "hash": "1234",
       "profile": 3,
       "listings": [
-
+        3
       ],
       "matched": [
-
+        1
       ]
     }
   },
@@ -85,6 +85,15 @@ var initialData = {
       "has": [
         1
       ]
+    },
+    "3": {
+      "owner": 3,
+      "want": [
+        1
+      ],
+      "has": [
+        2,3
+      ]
     }
   },
   "items": {
@@ -98,6 +107,12 @@ var initialData = {
       "picture": "url",
       "title": "CS240",
       "isbn": "8765",
+      "price": 120
+    },
+    "3": {
+      "picture": "url",
+      "title": "CS230",
+      "isbn": "1234",
       "price": 120
     }
   },
@@ -142,7 +157,7 @@ var initialData = {
   },
   "feed":{
     "3":{
-      "feeditems":[
+      "items":[
         1,2,3
       ]
     }

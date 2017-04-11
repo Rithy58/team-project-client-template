@@ -13,13 +13,18 @@ function emulateServerReturn(data, cb) {
 export function getHomeData(id, cb){
   var feed = {
       "user":{},
-      "feeditem": []
+      "item": [],
+      "saleitem":[]
 
   };
   var feedData = readDocument('feed',id);
   feed.user = readDocument('users', id);
-  feed.feeditem = feedData.feeditems.map(
-    (index)=>readDocument('feeditems', index)
+  feed.item = feedData.items.map(
+    (index)=>readDocument('items', index)
+  );
+  var listings = readDocument('listings',id);
+  feed.saleitem = listings.has.map(
+    (index)=>readDocument('items', index)
   );
   emulateServerReturn(feed, cb);
 }
