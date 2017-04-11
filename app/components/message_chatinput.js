@@ -15,7 +15,7 @@ export default class Message_ChatInput extends React.Component {
         var comment = this.state.value.trim();
         if (comment !== "") {
           // Post comment - send to Search
-          this.props.onSearch(this.state.value);
+          this.props.onPost(this.state.value);
           this.setState({value: ""});
         }
       }
