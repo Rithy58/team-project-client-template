@@ -36,7 +36,7 @@ export default class Message extends React.Component {
   }
 
   onPost(postContents) {
-    postComment(1,this.state['user1'].user.username, postContents, () => {
+    postComment(1, 'user1', postContents, () => {
       this.refresh();
     });
   }
@@ -116,7 +116,7 @@ export default class Message extends React.Component {
                      John Vilk is typing...
                    </p>
 
-                   <Message_ChatInput />
+                   <Message_ChatInput onPost={(postContents) => this.onPost(postContents)}/>
 
 
                </div>

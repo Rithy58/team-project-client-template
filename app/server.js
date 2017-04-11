@@ -89,7 +89,7 @@ export function getMatchedData(matchedId, userId, cb) {
 */
 export function getQueryData(query, cb) {
   // Get the item object with the id "query".
-  var queryData = readDocument('feeditems', query);
+  var queryData = readDocument('items', query);
   // Return FeedData with resolved references.
   // emulateServerReturn will emulate an asynchronous server operation, which
   // invokes (calls) the "cb" function some time in the future.
@@ -106,13 +106,9 @@ export function postComment(messageId, author, contents, cb) {
   // we don't have to resolve it. Read the document,
   // update the embedded object, and then update the
   // document in the database.
-  var messageItem = readDocument('messageItem', messageId);
-  messageItem.comments.push({
-    "author": author,
-    "contents": contents,
-    "postDate": new Date().getTime()
-  });
-  writeDocument('feedItems', messageItem);
+  var messageItem = readDocument('message', messageId);
+  messageItem.user1.message.push(contents);
+  writeDocument('message', messageItem);
   // Return a resolved version of the feed item so React can
   // render it.
   emulateServerReturn(messageItem, cb);

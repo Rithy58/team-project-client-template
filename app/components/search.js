@@ -34,13 +34,11 @@ export default class Search extends React.Component {
               {this.state.results.map((feedItem) => {
                 return (
                   <Home_Feed_Item
-                    id={feedItem._id}
-                    pic={feedItem.pic}
+                    key={feedItem._id}
                     title={feedItem.title}
-                    author={feedItem.author}
-                    edition={feedItem.edition}
                     isbn={feedItem.isbn}
-                    publisher={feedItem.publisher}></Home_Feed_Item>
+                    price={feedItem.price}
+                    ></Home_Feed_Item>
                 )
               })}
                 </Search_Feed>
