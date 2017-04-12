@@ -22,16 +22,21 @@ export default class Search extends React.Component {
     });
   }
 
+  findNumberOfResults() {
+    return this.state.results.length;
+  }
+
 
   render() {
     return (
           <div>
             <Navbar onSearch={(query) => this.onSearch(query)}/>
             <Search_Feed
-              numberOfResults='1'
+              numberOfResults={this.findNumberOfResults()}
               query='Algorithms'
               sortType='Relevance'>
-              {this.state.results.map((feedItem) => {
+              {
+                this.state.results.map((feedItem) => {
                 return (
                   <Home_Feed_Item
                     key={feedItem._id}
