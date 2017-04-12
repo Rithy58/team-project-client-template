@@ -113,3 +113,39 @@ export function postComment(messageId, author, contents, cb) {
   // render it.
   emulateServerReturn(messageItem, cb);
 }
+
+export function postListing(owner, want, has) {
+  var newListing = {
+    "owner": 1,
+    "want": [],
+    "has": []
+  };
+
+  // Add the listing update to the database.
+  // Returns the listing update w/ an ID assigned.
+  newListing = addDocument('listings', newListing);
+
+  newListing.want.push(want);
+  newListing.has.push(has);
+
+  //console.log(newListing);
+  // Add the status update reference to the front of the current user's feed.
+  var userData = readDocument('users', 1);
+
+  userData.listings.push({newListing});
+
+  //emulateServerReturn(newListing, cb);
+}
+
+export function postItem(picture, title, isbn, price, cb) {
+  var newItem = {
+    "picture": "url",
+    "title": title,
+    "isbn": ""+isbn,
+    "price": price
+  };
+
+newItem = addDocument('items', newItem);
+
+emulateServerReturn(newItem, cb);
+}
