@@ -7,7 +7,6 @@ return (
   <div className="panel panel-default fb-status-update searchbody">
     <div className="panel-body">
       {this.props.numberOfResults} results for <b> {this.props.query} </b>
-      <span className="pull-right"> Sort by <b>{this.props.sortType} </b><span className="caret"></span></span>
       <div className="row">
         &#x2063;
       </div>

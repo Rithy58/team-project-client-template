@@ -8,7 +8,8 @@ export default class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: []
+      results: [],
+      queried: ""
     };
   }
 
@@ -18,7 +19,8 @@ export default class Search extends React.Component {
     getQueryData(query, (queryData) => {
       // Database is now updated. Refresh the feed.
 
-      this.setState({results: [queryData]});
+      this.setState({results: [queryData],
+                      queried: query});
     });
   }
 
@@ -33,8 +35,7 @@ export default class Search extends React.Component {
             <Navbar onSearch={(query) => this.onSearch(query)}/>
             <Search_Feed
               numberOfResults={this.findNumberOfResults()}
-              query='Algorithms'
-              sortType='Relevance'>
+              query={this.state.queried}>
               {
                 this.state.results.map((feedItem) => {
                 return (
