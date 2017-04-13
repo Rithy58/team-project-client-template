@@ -29,14 +29,14 @@ export default class Userprofile_Sidebar extends React.Component {
           <div className="profile-usermenu">
             <ul className="nav">
               <li className="active">
-                <a href="#">
+                <Link to={"/profile"}>
                   <i className="glyphicon glyphicon-th-list"></i>
-                  My Listings </a>
+                  My Listings </Link>
               </li>
               <li>
-                <a href="#">
+                <Link to={"/matched/1"}>
                 <i className="glyphicon glyphicon-ok"></i>
-                Matches </a>
+                Matches </ Link>
               </li>
             </ul>
           </div>
