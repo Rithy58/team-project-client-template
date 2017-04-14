@@ -5,33 +5,25 @@ import SearchItem from './listingsearchitem.js'
 import ListingInfo from './listinginfo.js'
 import Navbar from './navbar.js';
 import {postItem, postListing} from '../server';
-//import {Link} from 'react-router';
+//import { withRouter, browserHistory } from 'react-router';
 
 export default class CreateListing extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      "listings": {
-        "owner": 1,
-        "want": [],
-        "has": []
-      },
-      "items": {
-        "theirs": {
-          "ypicture": "",
-          "ysubject": "CS",
-          "yisbnValue": '',
-          "yclassN": 187
-        },
-        "yours": {
-          "tpicture": "",
-          "tsubject": "CS",
-          "tisbnValue": "",
-          "tclassN": 187
-        }
-      }
-    };
+    this.state ={
+      "owner": 1,
+      "want": 1,
+      "has": 1,
+      "ypicture": '',
+      "ysubject": "CS",
+      "yisbnValue": '',
+      "yclassN": 187,
+      "tpicture": '',
+      "tsubject": "CS",
+      "tisbnValue": '',
+      "tclassN": 187
+    }
 
     this.handleYChange = this.handleYChange.bind(this);
     this.handleTChange = this.handleTChange.bind(this);
@@ -46,15 +38,14 @@ export default class CreateListing extends React.Component {
         this.setState({yisbnValue: value});
         break;
       case "subject":
-          this.setState({ysubject: value});
-          break;
+        this.setState({ysubject: value});
+        break;
       case "classN":
-          this.setState({yclassN: value});
-          break;
+        this.setState({yisbnValue: value});
+        break;
       default:
-          break;
+        break;
       }
-      //console.log(this.state.yclassN);
   }
 
   handleTChange(cat, value){
@@ -67,22 +58,22 @@ export default class CreateListing extends React.Component {
     else {
       this.setState({tclassN: value});
     }
+
   }
 
   handleSubmit(clickEvent){
     clickEvent.preventDefault();
 
-    postItem(this.state.ypicture, this.state.ysubject, this.state.yisbnValue, this.state.yclassN, (yitem) => {
-      this.setState({has: yitem});
+    postItem(this.state.ypicture, this.state.ysubject, this.state.yisbnValue, this.state.yclassN, (yy) => {
+      this.setState({has: yy});
     });
 
-    postItem(this.state.tpicture, this.state.tsubject, this.state.tisbnValue, this.state.tclassN, (titem) => {
-      this.setState({want: titem});
+    postItem(this.state.tpicture, this.state.tsubject, this.state.tisbnValue, this.state.tclassN, (tt) => {
+      this.setState({want: tt});
     });
 
     postListing(this.state.owner, this.state.want, this.state.has);
-
-    //console.log(this.state.want);
+    //browserHistory.push('/');
   }
 
   render() {
@@ -104,7 +95,10 @@ export default class CreateListing extends React.Component {
             <ListingInfo name="theirs" handleFormChange={this.handleTChange}/>
           </SearchItem>
           <span>
-            <button type="submit" className="btn borderbtn btn-sm createlistingsubmitbutton" onClick={(e) => this.handleSubmit(e)} >Submit</button>
+
+            <button type="submit" className="btn borderbtn btn-sm createlistingsubmitbutton" onClick={(e) => this.handleSubmit(e)} >
+              Submit
+            </button>
           </span>
         </div>
 
