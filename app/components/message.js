@@ -5,6 +5,7 @@ import Message_Main_User from './message_main_user.js';
 import Message_ChatInput from './message_chatinput.js';
 import Navbar from './navbar.js';
 import {getMessageData, postComment} from '../server.js';
+import {Link} from 'react-router';
 
 export default class Message extends React.Component {
   constructor(props) {
@@ -64,7 +65,7 @@ export default class Message extends React.Component {
 
                    <Message_Sidebar_User
                      avatar='https://research.fb.com/wp-content/uploads/2016/11/john-vilk.jpg'
-                     author='John Vilk'
+                     author='Jeremy Lee'
                      timestamp='10 minutes ago'
                      numUnread='2'>
                    </Message_Sidebar_User>
@@ -79,7 +80,7 @@ export default class Message extends React.Component {
            <div className="col-md-8">
              <div className="panel panel-default message-panel" id="msg-panel">
                <div className="panel-body">
-                   <p className="header">To: <a href="#">{this.state['user2'].user.username}</a></p>
+                   <p className="header">To: <Link to={"/profile"}>{this.state['user2'].user.username}</Link></p>
 
                    <hr />
 

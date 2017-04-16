@@ -4,7 +4,6 @@ export default class ListInfo extends React.Component {
 
   constructor(props) {
     super(props);
-    //this.state = {isbnValue: '', subject: 'CS', classN: '187'};
 
     this.handleChange = this.handleChange.bind(this);
   }
