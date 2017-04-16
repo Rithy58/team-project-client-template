@@ -10,7 +10,11 @@ export default class Userprofile extends React.Component {
       <div className="container">
       <div className="row-profile">
         <Navbar/>
-        <Userprofile_Sidebar />
+        <Userprofile_Sidebar
+          author="JEREMY LEE"
+          title="Founder of UBarter"
+          avatar="img/avatar.png"
+          />
         <Userprofile_Panel />
 
       </div>

@@ -1,15 +1,15 @@
 import React from 'react';
-
+import {Link} from 'react-router';
 export default class Message_Main_User extends React.Component {
   render() {
     return (
       <div className="media">
         <span className="user1-img pull-left">
-          <img src={this.props.avatar } alt="avatar" className="img-circle" height="45"/>
+          <img src={this.props.avatar } alt="avatar" className="img-circle user-image" height="45"/>
         </span>
 
         <div className="media-body">
-          <a href="#">{this.props.author}</a>
+          <Link to={"/profile"}>{this.props.author}</ Link>
           <br />
           {this.props.message}
           <br />

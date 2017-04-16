@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class Userprofile_Sidebar extends React.Component {
   render() {
@@ -7,15 +8,15 @@ export default class Userprofile_Sidebar extends React.Component {
         <div className="profile-sidebar">
 
           <div className="profile-userpic text-center">
-            <img src="img/avatar.png" alt="avatar" className="img-circle center-block" width="140" height="140" />
+            <img src={this.props.avatar} alt="avatar" className="img-circle center-block" width="140" height="140" />
           </div>
 
           <div className="profile-usertitle">
             <div className="profile-usertitle-name">
-              <h3 className="text-center">JEREMY LEE</h3>
+              <h3 className="text-center">{this.props.author}</h3>
             </div>
             <div className="profile-usertitle-job">
-              <h4>Founder of uBarter</h4>
+              <h4>{this.props.title}</h4>
             </div>
           </div>
 
@@ -24,32 +25,18 @@ export default class Userprofile_Sidebar extends React.Component {
               Edit Profile
             </button>
           </div>
-          <div>
-            <h6> </h6>
-          </div>
-          <div className="profile-userbuttons">
-            <button type="button" className="btn btn-sm">
-                <i className="glyphicon glyphicon-wrench"></i>
-                Account Settings
-              </button>
-          </div>
 
           <div className="profile-usermenu">
             <ul className="nav">
               <li className="active">
-                <a href="#">
+                <Link to={"/profile"}>
                   <i className="glyphicon glyphicon-th-list"></i>
-                  My Listings </a>
+                  My Listings </Link>
               </li>
               <li>
-                <a href="#">
+                <Link to={"/matched/1"}>
                 <i className="glyphicon glyphicon-ok"></i>
-                Matches </a>
-              </li>
-              <li>
-                <a href="#">
-                <i className="glyphicon glyphicon-flag"></i>
-                Help </a>
+                Matches </ Link>
               </li>
             </ul>
           </div>

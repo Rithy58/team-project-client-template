@@ -1,9 +1,38 @@
 import React from 'react';
 
-import Matched_User from './matched_user.js';
-import Matched_User_Item from './matched_user_item.js'
+import Matched_User from './matched/matched_user.js';
+import {getMatchedData} from '../server.js';
 
 export default class Matched extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      "1": {
+        "user": {
+          "username": ""
+        },
+        "listing": {
+          "want": [],
+          "has": []
+        }
+      },
+      "2": {
+        "user": {},
+        "listing": {
+          "want": [],
+          "has": []
+        }
+      }
+    };
+  }
+
+  componentDidMount() {
+    getMatchedData(this.props.params.id, 1, (feedData) => {
+      this.setState(feedData);
+    });
+  }
+
   render() {
     return (
       <div className="container">
@@ -14,32 +43,15 @@ export default class Matched extends React.Component {
           <div className="panel-body">
             <div className="row">
               <Matched_User
-                username='Rithy58'
-                avatar='img/user1.jpg'>
-                <Matched_User_Item
-                  img="/img/examplebook.jpg"
-                  name="Example Textbook"
-                  details={
-                    ['Author: Tim Richard',
-                    'Edition: 58th Edition',
-                    'ISBN: 978 1123 33454',
-                    'Publisher: PubPub, Inc']
-                  }/>
-            </Matched_User>
+                username={this.state['1'].user.username}
+                avatar='/img/user1.jpg'
+                listing={this.state['1'].listing}
+              />
               <Matched_User
-                username='Tommy'
-                avatar='img/user2.jpg'
-              >
-              <Matched_User_Item
-                img="/img/examplebook2.jpg"
-                name="Another Example Textbook"
-                details={
-                  ['Author: Tim Richard',
-                  'Edition: 58th Edition',
-                  'ISBN: 978 1123 33454',
-                  'Publisher: PubPub, Inc']
-                }/>
-            </Matched_User>
+                username={this.state['2'].user.username}
+                avatar='/img/user2.jpg'
+                listing={this.state['2'].listing}
+              />
             </div>
             <br />
             <div className="row">
