@@ -129,7 +129,7 @@ var want = postItem(ttitle, tisbn, tprice);
   // Returns the listing update w/ an ID assigned.
   newListing = addDocument('listings', newListing);
 
-  console.log(readDocument('listings', newListing._id));
+  //console.log(readDocument('listings', newListing._id));
 
   //console.log(newListing);
   // Add the status update reference to the front of the current user's feed.
