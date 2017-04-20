@@ -114,16 +114,22 @@ export function postComment(messageId, author, contents, cb) {
   emulateServerReturn(messageItem, cb);
 }
 
-export function postListing(owner, want, has) {
+export function postListing(owner, ytitle, yisbn, yprice, ttitle, tisbn, tprice) {
+
+var has = postItem(ytitle, yisbn, yprice);
+var want = postItem(ttitle, tisbn, tprice);
+
   var newListing = {
     "owner": owner,
-    "want": [want],
-    "has": [has]
+    "want": [want._id],
+    "has": [has._id]
   };
 
   // Add the listing update to the database.
   // Returns the listing update w/ an ID assigned.
   newListing = addDocument('listings', newListing);
+
+  //console.log(readDocument('listings', newListing._id));
 
   //console.log(newListing);
   // Add the status update reference to the front of the current user's feed.
@@ -134,7 +140,7 @@ export function postListing(owner, want, has) {
   //emulateServerReturn(newListing, cb);
 }
 
-export function postItem(picture, title, isbn, price, cb) {
+function postItem(title, isbn, price) {
   var newItem = {
     "picture": "url",
     "title": title,
@@ -143,5 +149,5 @@ export function postItem(picture, title, isbn, price, cb) {
   };
 
 newItem = addDocument('items', newItem);
-emulateServerReturn(newItem._id, cb);
+return newItem;
 }
