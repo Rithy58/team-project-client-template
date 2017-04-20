@@ -4,8 +4,8 @@ import YourItem from './listingyouritem.js';
 import SearchItem from './listingsearchitem.js'
 import ListingInfo from './listinginfo.js'
 import Navbar from './navbar.js';
-import {postItem, postListing} from '../server';
-//import { withRouter, browserHistory } from 'react-router';
+import {postListing} from '../server';
+import { withRouter, browserHistory } from 'react-router';
 
 export default class CreateListing extends React.Component {
   constructor(props) {
@@ -64,16 +64,16 @@ export default class CreateListing extends React.Component {
   handleSubmit(clickEvent){
     clickEvent.preventDefault();
 
-    postItem(this.state.ypicture, this.state.ysubject, this.state.yisbnValue, this.state.yclassN, (yy) => {
+    /*postItem(this.state.ypicture, this.state.ysubject, this.state.yisbnValue, this.state.yclassN, (yy) => {
       this.setState({has: yy});
     });
 
     postItem(this.state.tpicture, this.state.tsubject, this.state.tisbnValue, this.state.tclassN, (tt) => {
       this.setState({want: tt});
-    });
+    });*/
 
-    postListing(this.state.owner, this.state.want, this.state.has);
-    //browserHistory.push('/');
+    postListing(this.state.owner, this.state.ysubject, this.state.yisbnValue, this.state.yclassN, this.state.tsubject, this.state.tisbnValue, this.state.tclassN);
+    browserHistory.push('/');
   }
 
   render() {
