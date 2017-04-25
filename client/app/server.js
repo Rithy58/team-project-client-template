@@ -29,6 +29,21 @@ export function getHomeData(id, cb){
   emulateServerReturn(feed, cb);
 }
 
+export function getProfileData(id, cb){
+  var feed = {
+    "user":{},
+    "saleitem":[]
+  };
+  feed.user = readDocument('users', id);
+  var listings = readDocument('listings',id);
+  feed.saleitem = listings.has.map(
+    (index)=>readDocument('saleitem', index)
+  );
+  emulateServerReturn(feed, cb);
+
+  }
+
+
 export function getMessageData(messagedId, userId, cb) {
   var messagedData = readDocument('message', messagedId);
   messagedData['user1'].user = readDocument('users', userId);
