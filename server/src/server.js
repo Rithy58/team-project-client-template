@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(express.static('../client/build'));
 
 // Routes
-
+app.use('/api/search', require('./routes/search.js'));
 
 // Catch all other request and send the index file instead
 app.get('*', function (req, res) {
