@@ -12,7 +12,8 @@
     "client": "cd client && npm run build",
     "server": "cd server && node src/server.js",
     "start": "npm run client & npm run server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "cd server && npm install"
   },
   "cacheDirectories": [
     "client/node_modules",
