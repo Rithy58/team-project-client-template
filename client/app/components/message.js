@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Message_Sidebar_User from './message_sidebar_user.js';
-import Message_Main_User from './message_main_user.js';
-import Message_ChatInput from './message_chatinput.js';
+import Message_Sidebar_User from './message/message_sidebar_user.js';
+import Message_Main_User from './message/message_main_user.js';
+import Message_ChatInput from './message/message_chatinput.js';
 import Navbar from './navbar.js';
 import {getMessageData, postComment} from '../server.js';
 import {Link} from 'react-router-dom';
@@ -51,7 +51,7 @@ export default class Message extends React.Component {
          <div className="panel-body">
            <div className="col-md-4">
              <div className="panel panel-default sidebar-panel" id="sidebarPanel">
-               <div className="panel-body messgesidebar">
+               <div className="panel-body messgesidebar" id="msg-panel">
                  <div className="input-group chat-users_list">
                    <input type="text" className="form-control" placeholder="Conversation" />
                    <span className="input-group-btn">

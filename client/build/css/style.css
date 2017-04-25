@@ -229,11 +229,13 @@ body {
 #msg-panel {
   border-radius: 25px;
   height: 463px;
+  overflow: scroll !important;
 }
 #sidebarPanel {
   border: 2px solid green !important;
   border-radius: 25px;
   height: 463px;
+  overflow: scroll !important;
 }
 .chat-img {
   margin-right: 10px;
