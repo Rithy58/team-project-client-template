@@ -1,5 +1,5 @@
 import React from 'react';
-import Userprofile_Item from './userprofile_item.js'
+import Userprofile_Item from './userprofile/userprofile_item.js'
 
 export default class Userprofile_Panel extends React.Component {
   render() {
