@@ -1,5 +1,5 @@
 import React from 'react';
-import Search_Feed from './search_feed';
+import Search_Feed from './search/search_feed';
 import Home_Feed_Item from './home/home_feed_item';
 import Navbar from './navbar.js';
 import {getQueryData} from '../server.js';
