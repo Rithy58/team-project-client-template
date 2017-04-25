@@ -7,6 +7,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var bodyParser = require('body-parser');
 var path = require('path');
+var db = require('./modules/db.js');
 
 // Middleware
 app.use(bodyParser.text());
@@ -44,5 +45,6 @@ app.use(function(err, req, res, next) {
 
 // Starts the server
 server.listen(process.env.PORT, function () {
+  db.init();
   console.log('Server is running on port ' + process.env.PORT);
 });
