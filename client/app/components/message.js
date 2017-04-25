@@ -6,6 +6,7 @@ import Message_ChatInput from './message/message_chatinput.js';
 import Navbar from './navbar.js';
 import {getMessageData, postComment} from '../server.js';
 import {Link} from 'react-router-dom';
+import io from 'socket.io-client'
 
 export default class Message extends React.Component {
   constructor(props) {
@@ -27,6 +28,13 @@ export default class Message extends React.Component {
   }
 
   componentDidMount() {
+    this.socket = io.connect();
+    var that = this;
+    var newState = this.state;
+    this.socket.on('chat', function (data) {
+      newState['user1'].message.push(data);
+      that.setState(newState);
+    });
     this.refresh();
   }
 
@@ -37,9 +45,12 @@ export default class Message extends React.Component {
   }
 
   onPost(postContents) {
+    this.socket.emit('chat', postContents);
+
+    /*
     postComment(1, 'user1', postContents, () => {
       this.refresh();
-    });
+    });*/
   }
 
   render() {
