@@ -1,11 +1,11 @@
 import React from 'react';
 
-import YourItem from './listingyouritem.js';
-import SearchItem from './listingsearchitem.js'
-import ListingInfo from './listinginfo.js'
+import YourItem from './listing/listingyouritem.js';
+import SearchItem from './listing/listingsearchitem.js'
+import ListingInfo from './listing/listinginfo.js'
 import Navbar from './navbar.js';
 import {postListing} from '../server';
-import { withRouter, browserHistory } from 'react-router-dom';
+import { browserHistory } from 'react-router-dom';
 
 export default class CreateListing extends React.Component {
   constructor(props) {
