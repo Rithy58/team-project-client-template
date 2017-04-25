@@ -15,7 +15,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server-install": "cd server && npm install",
     "client-install": "cd client && npm install",
-    "install": "npm run server-install & npm run client-install"
+    "install": "npm run server-install & npm run client-install",
+    "heroku-postbuild": "npm run client"
   },
   "cacheDirectories": [
     "client/node_modules",
