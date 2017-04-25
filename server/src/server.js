@@ -15,6 +15,7 @@ app.use(express.static('../client/build'));
 
 // Routes
 app.use('/api/search', require('./routes/search.js'));
+app.use('/api/message', require('./routes/message.js'));
 
 // Catch all other request and send the index file instead
 app.get('*', function (req, res) {
