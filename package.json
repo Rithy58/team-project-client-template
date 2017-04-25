@@ -1,0 +1,31 @@
+{
+  "name": "ubarter-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "6.10.2"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "client": "cd client && npm run build",
+    "server": "cd server && node src/server.js",
+    "start": "npm run client & npm run server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "cacheDirectories": [
+    "client/node_modules",
+    "server/node_modules"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rithy58/ubarter-frontend.git"
+  },
+  "author": "SeihakRithy Muth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rithy58/ubarter-frontend/issues"
+  },
+  "homepage": "https://github.com/Rithy58/ubarter-frontend#readme"
+}

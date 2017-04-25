@@ -5,7 +5,7 @@ import Message_Main_User from './message_main_user.js';
 import Message_ChatInput from './message_chatinput.js';
 import Navbar from './navbar.js';
 import {getMessageData, postComment} from '../server.js';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 export default class Message extends React.Component {
   constructor(props) {

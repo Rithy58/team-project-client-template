@@ -4,6 +4,7 @@ import Home_Feed from './home/home_feed.js';
 import Home_Side_Bar from './home/home_side_bar.js';
 import Navbar from './navbar.js';
 import {getHomeData} from '../server.js';
+import io from 'socket.io-client'
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -16,6 +17,12 @@ export default class Home extends React.Component {
     };
   }
   componentDidMount() {
+    var socket = io.connect();
+    socket.on('news', function (data) {
+      console.log(data);
+      socket.emit('my other event', { my: 'data' });
+    });
+
     getHomeData(3, (feedData) => {
       this.setState(feedData);
     });

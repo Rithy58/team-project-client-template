@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, browserHistory} from 'react-router'
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
 
 import Home from './components/home.js';
 import Userprofile from './components/userprofile.js';
@@ -10,12 +13,14 @@ import Message from './components/message.js';
 import CreateListing from './components/createlisting.js';
 
 ReactDOM.render((
-  <Router history={browserHistory}>
-    <Route path="/" components={Home}/>
-    <Route path="/message" components={Message}/>
-    <Route path="/profile" components={Userprofile}/>
-    <Route path="/search" components={Search}/>
-    <Route path="/matched/:id" components={Matched}/>
-    <Route path="/listing/create" components={CreateListing}/>
+  <Router>
+    <div>
+    <Route exact path="/" component={Home}/>
+    <Route path="/message" component={Message}/>
+    <Route path="/profile" component={Userprofile}/>
+    <Route path="/search" component={Search}/>
+    <Route path="/matched/:id" component={Matched}/>
+    <Route path="/listing/create" component={CreateListing}/>
+  </div>
   </Router>
 ), document.getElementById('app'));
