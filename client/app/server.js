@@ -11,22 +11,14 @@ function emulateServerReturn(data, cb) {
 }
 
 export function getHomeData(id, cb){
-  var feed = {
-      "user":{},
-      "item": [],
-      "saleitem":[]
-
-  };
-  var feedData = readDocument('feed',id);
-  feed.user = readDocument('users', id);
-  feed.item = feedData.items.map(
-    (index)=>readDocument('items', index)
-  );
-  var listings = readDocument('listings',id);
-  feed.saleitem = listings.has.map(
-    (index)=>readDocument('items', index)
-  );
-  emulateServerReturn(feed, cb);
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '/user/3/feed');
+  xhr.setRequestHeader('Authorization', 'Bearer eyJpZCI6M30=');
+  xhr.addEventListener('load', function() {
+    // Call the callback with the data.
+    cb(JSON.parse(xhr.responseText));
+  });
+  xhr.send();
 }
 
 export function getMessageData(messagedId, userId, cb) {
