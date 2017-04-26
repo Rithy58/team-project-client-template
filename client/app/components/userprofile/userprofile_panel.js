@@ -1,7 +1,22 @@
 import React from 'react';
 import Userprofile_Item from './userprofile_item.js'
+import Home_Feed_Item from '../home/home_feed_item.js'
+import {getProfileData} from '../../server.js';
 
 export default class Userprofile_Panel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      "user": {},
+      "saleitem":[]
+    };
+  }
+
+  componentDidMount() {
+    getProfileData(3, (feedData) =>{
+      this.setState(feedData);
+    });
+  }
   render() {
     return (
     <div className="col-md-9 profile">
@@ -12,16 +27,18 @@ export default class Userprofile_Panel extends React.Component {
           </button>
         </span>
 
-        <Userprofile_Item
-          pic="img/examplebook.jpg"
-          title="Essentials of Marketing Research"
-          details={
-            ['Author: Joseph F. Hair, Jr.',
-            'Edition: 3rd Edition',
-            'ISBN: 978-0-07-802881',
-            'Publisher: The McGraw-Hill Companies, Inc.']
-          }
-          />
+        {
+          this.state.item.map(
+            (item, index) => {return (
+              <Home_Feed_Item
+              picture={item.picture}
+              title={item.title}
+              isbn={item.isbn}
+              price={item.price}
+              key={index}/>
+            )}
+          )
+        }
 
       </div>
       <br />

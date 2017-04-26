@@ -8,6 +8,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var bodyParser = require('body-parser');
 var path = require('path');
+var db = require('./modules/db.js');
 
 // Middleware
 app.use(bodyParser.text());
@@ -15,7 +16,8 @@ app.use(bodyParser.json());
 app.use(express.static('../client/build'));
 
 // Routes
-
+app.use('/api/search', require('./routes/search.js'));
+app.use('/api/message', require('./routes/message.js'));
 
 // Catch all other request and send the index file instead
 app.get('*', function (req, res) {
@@ -27,6 +29,10 @@ io.on('connection', function (socket) {
   socket.emit('news', { hello: 'world' });
   socket.on('my other event', function (data) {
     console.log(data);
+  });
+  socket.on('chat', function(data) {
+    console.log(data);
+    socket.emit('chat', data);
   });
 });
 
@@ -45,6 +51,7 @@ app.use(function(err, req, res, next) {
 
 // Starts the server
 server.listen(process.env.PORT, function () {
+  db.init();
   console.log('Server is running on port ' + process.env.PORT);
 });
 
