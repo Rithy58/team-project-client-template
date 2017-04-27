@@ -1,73 +1,17 @@
 import React from 'react';
-import Home_Feed_Item from './home/home_feed_item';
-import Home_Feed from './home/home_feed.js';
-import Home_Side_Bar from './home/home_side_bar.js';
-import Navbar from './navbar.js';
-import {getHomeData} from '../server.js';
-import io from 'socket.io-client'
+import Home_Item from './home/home_item.js';
+import Home_Login from './home/home_login.js';
 
 export default class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        "user":{},
-        "item": [],
-        "saleitem":[]
-
-    };
-  }
-  componentDidMount() {
-    var socket = io.connect();
-    socket.on('news', function (data) {
-      console.log(data);
-      socket.emit('my other event', { my: 'data' });
-    });
-
-    getHomeData(3, (feedData) => {
-      this.setState(feedData);
-    });
-  }
   render() {
     return (
-      <div>
-        <Navbar/>
-        <div className="container">
-          <div className="home-feed">
-            <div className="words">
-              User Postings
-            </div>
-            <Home_Feed>
-              {
-                this.state.item.map(
-                  (item, index) => {return (
-                    <Home_Feed_Item
-                    picture={item.picture}
-                    title={item.title}
-                    isbn={item.isbn}
-                    price={item.price}
-                    key={index}/>
-                  )}
-                )
-              }
-
-            </Home_Feed>
-            <Home_Side_Bar
-              name={this.state.user.username}
-              pic='http://thedesigninspiration.com/wp-content/uploads/2014/07/Cute-Rabbits-026.jpg'>
-              {
-                this.state.saleitem.map(
-                  (item, index) => {return (
-                    <Home_Feed_Item
-                    picture={item.picture}
-                    title={item.title}
-                    isbn={item.isbn}
-                    price={item.price}
-                    key={index}/>
-                  )}
-                )
-              }
-            </Home_Side_Bar>
-          </div>
+      <div className="row center-block">
+        <div className="col-md-8">
+          <Home_Item title="Book 1" author="Author 1" isbn="1234" price="$120"></Home_Item>
+          <Home_Item title="Book 2" author="Author 2" isbn="5678" price="$140"></Home_Item>
+        </div>
+        <div className="col-md-4">
+          <Home_Login></Home_Login>
         </div>
       </div>
     )

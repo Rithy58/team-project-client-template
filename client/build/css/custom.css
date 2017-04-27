@@ -1,0 +1,9 @@
+body {
+  background: #F1F3FA;
+  margin-top: 60px;
+}
+
+.navbar-default .navbar-nav>li>.activeNav{
+  font-weight: bold;
+  color: #000;
+}

@@ -57,15 +57,27 @@ var io = require('socket.io')(server);
 var bodyParser = require('body-parser');
 var path = require('path');
 var db = require('./modules/db.js');
+var auth = require('./modules/auth.js');
+var jwt = require('express-jwt')({
+  secret: process.env.JWT_SECRET,
+  userProperty: 'jwt'
+});
 
 // Middleware
 app.use(bodyParser.text());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('../client/build'));
+app.use(auth.initialize());
 
 // Routes
 app.use('/api/search', require('./routes/search.js'));
 app.use('/api/message', require('./routes/message.js'));
+app.use('/api/auth', require('./routes/auth.js'));
+
+app.post('/api/listing/create', jwt, function(req, res) {
+  res.json({token: req.jwt});
+});
 
 // Catch all other request and send the index file instead
 //app.get('*', function (req, res) {
@@ -80,7 +92,7 @@ io.on('connection', function (socket) {
   });
   socket.on('chat', function(data) {
     console.log(data);
-    socket.emit('chat', data);
+    io.emit('chat', data);
   });
 });
 
@@ -93,6 +105,14 @@ app.use(function(err, req, res, next) {
     res.status(400).end();
   } else {
     // It's some other sort of error; pass it to next error middleware handler
+    next(err);
+  }
+});
+
+app.use(function (err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    res.status(401).send('invalid token...');
+  } else {
     next(err);
   }
 });
