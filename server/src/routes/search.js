@@ -3,7 +3,7 @@ var searchRouter = express.Router();
 var db = require('../modules/db.js');
 var database = db.getDatabase();
 
-searchRouter.post('/', function(req, res) {
+searchRouter.get('/', function(req, res) {
   // res.status(200).send('Let there be light');
   if (typeof(req.body) === 'string') {
     var queryText = req.body.trim().toLowerCase();
@@ -17,17 +17,8 @@ searchRouter.post('/', function(req, res) {
         return sendDatabaseError(res, err);
       }
 
-      // Resolve all items
-      var resolvedItems = [];
-      for (var i = 0; i < items.length; i++) {
-        resolvedItems.push(items[i]);
-      }
-      res.send(resolvedItems);
-
-      // Special case: No results.
-      if (items.length === 0) {
-        res.send([]);
-      }
+      // Return the items
+      res.send(items);
     });
   } else {
     // 400: Bad Request.
