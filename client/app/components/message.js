@@ -1,11 +1,12 @@
 import React from 'react';
 
-import Message_Sidebar_User from './message_sidebar_user.js';
-import Message_Main_User from './message_main_user.js';
-import Message_ChatInput from './message_chatinput.js';
+import Message_Sidebar_User from './message/message_sidebar_user.js';
+import Message_Main_User from './message/message_main_user.js';
+import Message_ChatInput from './message/message_chatinput.js';
 import Navbar from './navbar.js';
 import {getMessageData, postComment} from '../server.js';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
+import io from 'socket.io-client'
 
 export default class Message extends React.Component {
   constructor(props) {
@@ -27,6 +28,13 @@ export default class Message extends React.Component {
   }
 
   componentDidMount() {
+    this.socket = io.connect();
+    var that = this;
+    var newState = this.state;
+    this.socket.on('chat', function (data) {
+      newState['user1'].message.push(data);
+      that.setState(newState);
+    });
     this.refresh();
   }
 
@@ -37,9 +45,12 @@ export default class Message extends React.Component {
   }
 
   onPost(postContents) {
+    this.socket.emit('chat', postContents);
+
+    /*
     postComment(1, 'user1', postContents, () => {
       this.refresh();
-    });
+    });*/
   }
 
   render() {
@@ -51,7 +62,7 @@ export default class Message extends React.Component {
          <div className="panel-body">
            <div className="col-md-4">
              <div className="panel panel-default sidebar-panel" id="sidebarPanel">
-               <div className="panel-body messgesidebar">
+               <div className="panel-body messgesidebar" id="msg-panel">
                  <div className="input-group chat-users_list">
                    <input type="text" className="form-control" placeholder="Conversation" />
                    <span className="input-group-btn">

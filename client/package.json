@@ -6,9 +6,10 @@
   "license": "MIT",
   "scripts": {
     "serve": "webpack-dev-server --content-base build",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "build": "webpack"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel": "^6.3.26",
     "babel-core": "^6.4.0",
     "babel-loader": "^6.2.0",
@@ -16,9 +17,11 @@
     "babel-preset-react": "^6.3.13",
     "eslint": "^1.10.3",
     "eslint-plugin-react": "^3.14.0",
-    "react": "^0.14.6",
-    "react-dom": "^0.14.6",
-    "react-router": "^2.8.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "socket.io-client": "^1.7.3",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.14.1"
   }
