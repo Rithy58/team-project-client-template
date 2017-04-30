@@ -1,9 +1,71 @@
 import React from 'react';
 import Home_Item from './home/home_item.js';
 import Home_Login from './home/home_login.js';
+import Home_User from './home/home_user.js';
+import {login, logout, isLogin} from '../services/auth.js';
 
 export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        "user":{},
+        "isLogin": false,
+        "listing": []
+    };
+    this.loginFn = this.loginFn.bind(this);
+    this.logoutFn = this.logoutFn.bind(this);
+  }
+
+  componentDidMount() {
+    isLogin((userObj) => {
+      if(userObj) {
+        this.setState({
+          user: userObj,
+          isLogin: true
+        });
+      } else {
+        this.setState({
+          user: {},
+          isLogin: false
+        });
+      }
+    });
+  }
+
+  loginFn(user) {
+    login(user, (userObj) => {
+      if(userObj) {
+        this.setState({
+          user: userObj,
+          isLogin: true
+        });
+      } else {
+        this.setState({
+          user: {},
+          isLogin: false
+        });
+      }
+    });
+  }
+
+  logoutFn() {
+    logout(() => {
+      this.setState({
+        user: {},
+        isLogin: false
+      });
+    });
+  }
+
   render() {
+    var loginPanel;
+
+    if(this.state.isLogin) {
+      loginPanel = <Home_User logout={this.logoutFn} username={this.state.user.username}/>
+    } else {
+      loginPanel = <Home_Login login={this.loginFn} />
+    }
+
     return (
       <div className="row center-block">
         <div className="col-md-8">
@@ -19,7 +81,7 @@ export default class Home extends React.Component {
         </div>
 
         <div className="col-md-4">
-          <Home_Login></Home_Login>
+          { loginPanel }
         </div>
       </div>
     )
