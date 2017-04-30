@@ -3,7 +3,7 @@ var authRouter = express.Router();
 var auth = require('../modules/auth.js');
 var user = require('../modules/user.js');
 
-authRouter.post('/api/auth/login',
+authRouter.post('/login',
   auth.authenticate('local', { session: false }),
   function(req, res) {
     var token = user.generateJWT(req.body.username);
@@ -11,7 +11,7 @@ authRouter.post('/api/auth/login',
   }
 );
 
-authRouter.post('/api/auth/register', function(req, res) {
+authRouter.post('/register', function(req, res) {
   user.createUser(req.body.username, req.body.password, function(result) {
     var token = user.generateJWT(req.body.username);
     console.log(result);
