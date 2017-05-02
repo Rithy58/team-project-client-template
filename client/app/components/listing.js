@@ -19,7 +19,10 @@ export default class Listing extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.createListing({
-      
+      title: 'Book 1',
+      author: 'Author 1',
+      isbn: '1234',
+      price: '$120'
     });
   }
 

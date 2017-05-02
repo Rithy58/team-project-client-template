@@ -2,7 +2,7 @@ var express = require('express');
 var listingRouter = express.Router();
 
 listingRouter.post('/create', function(req, res) {
-  req.io.emit('chat', 'this actually worked!' + req.body.test);
+  req.io.emit('new listing', req.body);
   res.json({token: req.jwt});
 });
 
