@@ -19,10 +19,10 @@ export default class Listing extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.createListing({
-      title: 'Book 1',
-      author: 'Author 1',
-      isbn: '1234',
-      price: '$120'
+      title: 'Title: Essentials of Marketing Research',
+      author: 'Author: Mary Wolfinbarger',
+      isbn: 'ISBN: 978-0073404820',
+      price: 'Price: $120'
     });
   }
 

@@ -14,6 +14,15 @@ export default class Home_Item extends React.Component {
             <li className="list-group-item">{ this.props.isbn }</li>
             <li className="list-group-item">{ this.props.price }</li>
 					</ul>
+
+          <div className="col-md-12 text-center">
+            <div className="btn-group" role="group" aria-label="buttons">
+              <button type="button" className="btn btn-default">
+                <span className="glyphicon glyphicon-comment" aria-hidden="true"></span> Contact Seller
+              </button>
+            </div>
+          </div>
+
 				</div>
 			</div>
     )

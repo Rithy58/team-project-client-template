@@ -81,7 +81,7 @@ export default class Home extends React.Component {
         <div className="col-md-8">
           <div className="panel panel-default">
             <div className="panel-heading">
-              <h3 className="panel-title">Items Listing</h3>
+              <h3 className="panel-title">Listing Matched</h3>
             </div>
             <div className="panel-body">
               {
