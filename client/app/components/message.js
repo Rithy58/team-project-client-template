@@ -4,7 +4,7 @@ import Message_Sidebar_User from './message/message_sidebar_user.js';
 import Message_Main_User from './message/message_main_user.js';
 import Message_ChatInput from './message/message_chatinput.js';
 import Navbar from './navbar.js';
-import {getMessageData, postComment} from '../server.js';
+import {getMessageData} from '../server.js';
 import {Link} from 'react-router-dom';
 import io from 'socket.io-client'
 
