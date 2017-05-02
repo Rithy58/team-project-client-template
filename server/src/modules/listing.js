@@ -10,7 +10,6 @@ listing.createListing = function(username, listing, cb) {
     if(err) {
       console.log(err);
     }
-    console.log(result);
     database.collection('users').updateOne({
       _id: username
     }, {
