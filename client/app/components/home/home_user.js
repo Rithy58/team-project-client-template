@@ -7,7 +7,7 @@ export default class Home_User extends React.Component {
         <p>
           Logged in as: {this.props.username}
         </p>
-        <button onClick={this.props.logout}>Logout</button>
+        <button onClick={(e) => this.props.logout(e)}>Logout</button>
       </div>
     );
   }

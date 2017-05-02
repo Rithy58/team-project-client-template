@@ -5,22 +5,22 @@ export default class Listing extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      created: false
+      created: 'false'
     };
-    this.createListing = this.createListing.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   createListing(data) {
     sendXHR('POST', '/api/listing/create', data, (xhr) => {
       if(xhr)
-        this.refresh();
+        this.setState({created: 'true'});
     });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    this.createListing({test: 'test'});
+    this.createListing({
+      
+    });
   }
 
   render() {
@@ -28,8 +28,9 @@ export default class Listing extends React.Component {
       <div>
         <p>
           This is Listing page!
+          State: {this.state.created}
         </p>
-        <button onClick={this.handleSubmit}>Create Listing</button>
+        <button onClick={(e) => this.handleSubmit(e)}>Create Listing</button>
       </div>
     )
   }

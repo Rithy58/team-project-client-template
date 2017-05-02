@@ -3,6 +3,7 @@ import Home_Item from './home/home_item.js';
 import Home_Login from './home/home_login.js';
 import Home_User from './home/home_user.js';
 import {login, logout, isLogin} from '../services/auth.js';
+import io from 'socket.io-client'
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -12,6 +13,14 @@ export default class Home extends React.Component {
         "isLogin": false,
         "listing": []
     };
+
+    this.socket = io.connect();
+    this.socket.on('new listing', (data) => {
+      var newListing = this.state.listing;
+      newListing.push(data);
+      this.setState({listing: newListing});
+    });
+
     this.loginFn = this.loginFn.bind(this);
     this.logoutFn = this.logoutFn.bind(this);
   }
@@ -48,7 +57,8 @@ export default class Home extends React.Component {
     });
   }
 
-  logoutFn() {
+  logoutFn(event) {
+    event.preventDefault();
     logout(() => {
       this.setState({
         user: {},
@@ -74,8 +84,20 @@ export default class Home extends React.Component {
               <h3 className="panel-title">Items Listing</h3>
             </div>
             <div className="panel-body">
-              <Home_Item title="Book 1" author="Author 1" isbn="1234" price="$120"></Home_Item>
-              <Home_Item title="Book 2" author="Author 2" isbn="5678" price="$140"></Home_Item>
+              {
+                this.state.listing.map(
+                  (item, index) => {
+                    return (
+                      <Home_Item
+                        title={item.title}
+                        author={item.author}
+                        isbn={item.isbn}
+                        price={item.price}
+                        key={index}/>
+                      );
+                    }
+                  )
+                }
             </div>
           </div>
         </div>
