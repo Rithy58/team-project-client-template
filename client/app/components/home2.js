@@ -34,7 +34,6 @@ export default class Home extends React.Component {
                 this.state.item.map(
                   (item, index) => {return (
                     <Home_Feed_Item
-                    picture={item.picture}
                     title={item.title}
                     isbn={item.isbn}
                     price={item.price}

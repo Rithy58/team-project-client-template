@@ -3,8 +3,7 @@ import React from 'react';
 import Message_Sidebar_User from './message/message_sidebar_user.js';
 import Message_Main_User from './message/message_main_user.js';
 import Message_ChatInput from './message/message_chatinput.js';
-import Navbar from './navbar.js';
-import {getMessageData, postComment} from '../server.js';
+import {getMessageData} from '../server.js';
 import {Link} from 'react-router-dom';
 import io from 'socket.io-client'
 
@@ -56,7 +55,6 @@ export default class Message extends React.Component {
   render() {
     return (
     <div>
-     <Navbar />
       <div className="container">
        <div className="panel panel-default overall-panel messagecontainerbar" id="over-panel">
          <div className="panel-body">
@@ -77,8 +75,8 @@ export default class Message extends React.Component {
                    <Message_Sidebar_User
                      avatar='https://research.fb.com/wp-content/uploads/2016/11/john-vilk.jpg'
                      author='Jeremy Lee'
-                     timestamp='10 minutes ago'
-                     numUnread='2'>
+                     timestamp='Online'
+                     numUnread='0'>
                    </Message_Sidebar_User>
 
 
@@ -91,29 +89,18 @@ export default class Message extends React.Component {
            <div className="col-md-8">
              <div className="panel panel-default message-panel" id="msg-panel">
                <div className="panel-body">
-                   <p className="header">To: <Link to={"/profile"}>{this.state['user2'].user.username}</Link></p>
+                   <p className="header">To: <Link to={"/profile"}>Jeremy Lee</Link></p>
 
                    <hr />
 
-                   {
-                     this.state['user2'].message.map(
-                       (message,index) => {return (
-                         <div>
-                           <Message_Main_User avatar='https://research.fb.com/wp-content/uploads/2016/11/john-vilk.jpg'
-                             author={this.state['user2'].user.username}
-                             message={message} key={index}/> <hr />
-                         </div>
 
-                        )}
-                     )
-                   }
 
                    {
                      this.state['user1'].message.map(
                        (message,index) => {return (
                          <div>
                            <Message_Main_User avatar='https://research.fb.com/wp-content/uploads/2016/11/john-vilk.jpg'
-                             author={this.state['user1'].user.username}
+                             author="Jeremy Lee"
                              message={message} key={index}/> <hr />
                          </div>
 
@@ -125,7 +112,7 @@ export default class Message extends React.Component {
 
 
                    <p className="currently_typing">
-                     John Vilk is typing...
+                     Jeremy Lee is typing...
                    </p>
 
                    <Message_ChatInput onPost={(postContents) => this.onPost(postContents)}/>

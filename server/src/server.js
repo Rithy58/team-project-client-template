@@ -20,20 +20,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('../client/build'));
 app.use(auth.initialize());
+// Make io accessible to other router
+app.use(function(req, res, next) {
+    req.io = io;
+    next();
+});
 
 // Routes
 app.use('/api/search', require('./routes/search.js'));
 app.use('/api/message', require('./routes/message.js'));
 app.use('/api/auth', require('./routes/auth.js'));
 
-app.post('/api/listing/create', jwt, function(req, res) {
-  res.json({token: req.jwt});
-});
-
-// Catch all other request and send the index file instead
-app.get('*', function (req, res) {
-    res.sendFile(path.resolve('../client/build', 'index.html'));
-});
+app.use('/api/listing', jwt, require('./routes/listing.js'));
 
 // Socket.IO
 io.on('connection', function (socket) {
@@ -45,6 +43,11 @@ io.on('connection', function (socket) {
     console.log(data);
     io.emit('chat', data);
   });
+});
+
+// Catch all other request and send the index file instead
+app.get('*', function (req, res) {
+    res.sendFile(path.resolve('../client/build', 'index.html'));
 });
 
 /**

@@ -32,7 +32,6 @@ export default class Nav extends React.Component {
                 <li><NavLink to="/message" activeClassName="activeNav">Message</NavLink></li>
                 <li><NavLink to="/profile" activeClassName="activeNav">Profile</NavLink></li>
                 <li><NavLink to="/search" activeClassName="activeNav">Search</NavLink></li>
-                <li><NavLink to="/matched/1" activeClassName="activeNav">Matched ID: 1</NavLink></li>
                 <li><NavLink to="/listing" activeClassName="activeNav">Listing</NavLink></li>
             </ul>
           </div>
